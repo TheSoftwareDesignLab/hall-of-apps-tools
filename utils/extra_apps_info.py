@@ -1,3 +1,6 @@
+from decimal import *
+
+
 def get_apps(soup, class_content, dictionary, state):
     if soup.find("div", {"class": class_content}) is not None:
         apps = soup.find("div", {"class": class_content}).find_all("div", {"class": "card no-rationale square-cover apps small"})
@@ -23,9 +26,10 @@ def get_apps(soup, class_content, dictionary, state):
                        "dev_name": "N/A" if similar_dev_name is None else similar_dev_name,
                        "price": "N/A" if price_button is None or price_button == "N/A" else price_button.span.string,
                        "summary": "N/A" if similar_description is None else similar_description.strip(),
-                       "rating": "N/A" if similar_rating is None else similar_rating.div["aria-label"].split("stars")[0].replace("Rated", "").strip(),
+                       "rating": -1.0 if similar_rating is None else float(round(Decimal(similar_rating.div["aria-label"].split("stars")[0].replace("Rated", "").strip()),3)),
                        "app_id": dictionary["id"],
-                       "app_retrieved_date": dictionary["retrieved_date"],
+                       "app_retrieved_date_start": dictionary["retrieved_date_start"],
+                       "app_retrieved_date_end": dictionary["retrieved_date_end"],
                        "app_name": dictionary["name"]
                        }
 

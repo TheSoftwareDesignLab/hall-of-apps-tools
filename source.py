@@ -64,13 +64,14 @@ def main():
             df_reviews = pd.DataFrame(reviews)
             df_extra_apps = pd.DataFrame(extra_apps)
 
+            print(df_apps.columns)
+            print(df_apps.dtypes)
+
             print(df_reviews.columns)
             print(df_reviews.dtypes)
-            print(df_reviews["rating"])
-            #print(df_reviews["date"])
-            print(df_reviews["dev_reply_date"])
-            #print(len(df_apps["genre"][0]))
-            #print(len(df_apps["whats_new"][0]))
+
+            print(df_extra_apps.columns)
+            print(df_extra_apps.dtypes)
 
             break
 

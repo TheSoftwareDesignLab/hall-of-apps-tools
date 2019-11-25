@@ -1,4 +1,5 @@
 from decimal import *
+import datetime
 
 
 def get_basic_info(soup, file, dictionary):
@@ -12,7 +13,9 @@ def get_basic_info(soup, file, dictionary):
     description = soup.find("div", {"class": "show-more-content text-body", "itemprop": "description"}).get_text()
 
     file_info = file.split("%")
-    retrieved_date = file_info[0]
+    retrieved_date = file_info[0].split("-")
+    retrieved_date_start = retrieved_date[0]
+    retrieved_date_end = retrieved_date[1]
     country = file_info[1]
     category = file_info[2]
 
@@ -22,7 +25,10 @@ def get_basic_info(soup, file, dictionary):
     dictionary["url"] = "N/A" if app_url is None else app_url["content"].strip()
     dictionary["category"] = "N/A" if category is None else category
     dictionary["country"] = "N/A" if country is None else country
-    dictionary["retrieved_date"] = "N/A" if retrieved_date is None else retrieved_date
+
+    dictionary["retrieved_date_start"] = get_retrieved_date("1990011") if retrieved_date_start is None else get_retrieved_date(retrieved_date_start)
+    dictionary["retrieved_date_end"] = get_retrieved_date("1990011") if retrieved_date_end is None else get_retrieved_date(retrieved_date_end)
+
     dictionary["genre"] = ["N/A"] if genre is None else genre.string.split("&")
     dictionary["price"] = "N/A" if price is None else price["content"].strip()
     dictionary["description"] = "N/A" if description is None else description.strip()
@@ -64,7 +70,7 @@ def get_tech_info(soup, dictionary):
     android_versions = soup.find("div", {"itemprop": "operatingSystems"})
     content_rating = soup.find("div", {"itemprop": "contentRating"})
 
-    dictionary["last_update"] = "N/A" if date_updated is None else date_updated.string.strip()
+    dictionary["last_update"] = get_date("January 1, 1990") if date_updated is None else get_date(date_updated.string.strip())
     dictionary["num_installs"] = "N/A" if num_installs is None else num_installs.string.strip()
     dictionary["current_version"] = "N/A" if current_version is None else current_version.string.strip()
     dictionary["android_version"] = "N/A" if android_versions is None else android_versions.string.strip()
@@ -104,3 +110,13 @@ def get_whats_new(soup, dictionary):
     dictionary["whats_new"] = list_news
 
     return dictionary
+
+
+def get_date(string_date):
+
+    return datetime.datetime.strptime(string_date, "%B %d, %Y")
+
+
+def get_retrieved_date(retrieved_date):
+
+    return datetime.datetime.strptime(retrieved_date, "%Y%m%d")

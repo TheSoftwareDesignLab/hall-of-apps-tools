@@ -36,7 +36,7 @@ def get_reviews(soup, dictionary):
             dev_reply = dev_comment.get_text().replace(dev_name, "").replace(dev_date, "").strip()
 
         current_review = {"author": "N/A" if review_author is None else review_author.string,
-                          "date": "N/A" if review_date is None else get_date(review_date.string),
+                          "date": get_date("January 1, 1990") if review_date is None else get_date(review_date.string),
                           "rating": -1.0 if review_rating is None else float(round(Decimal(review_rating["aria-label"].split("stars")[0].replace("Rated", "").strip()),3)),
                           "title": "N/A" if review_title is None else review_title,
                           "text": review_text,
@@ -44,7 +44,8 @@ def get_reviews(soup, dictionary):
                           "dev_reply": dev_reply,
                           "dev_reply_date": get_date(dev_date),
                           "app_id": dictionary["id"],
-                          "app_retrieved_date": dictionary["retrieved_date"],
+                          "app_retrieved_date_start": dictionary["retrieved_date_start"],
+                          "app_retrieved_date_end": dictionary["retrieved_date_end"],
                           "app_name": dictionary["name"]
                           }
 

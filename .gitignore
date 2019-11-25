@@ -222,9 +222,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Data to test
-data/
-
 # Python environment
 mining-env/
 
