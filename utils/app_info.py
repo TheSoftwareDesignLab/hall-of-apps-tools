@@ -94,7 +94,11 @@ def get_dev_info(soup, dictionary):
     dev = soup.find("a", {"class": "document-subtitle primary"}).span
     dev_mail = soup.find(is_dev_email)
     dev_address = soup.find("div", {"class": "content physical-address"})
-
+    #yo lo haría así
+    # dictionary["dev_name"] = dev.string if dev is not None else dev
+    # o tambien así
+    #dictionary["dev_name"] = dev.string if dev else dev
+    
     dictionary["dev_name"] = "N/A" if dev is None else dev.string
     dictionary["dev_mail"] = "N/A" if dev_mail is None else dev_mail.string.replace("Email", "").strip()
     dictionary["dev_address"] = "N/A" if dev_address is None else str(dev_address)
