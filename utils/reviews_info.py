@@ -1,3 +1,7 @@
+from decimal import *
+import datetime
+
+
 def get_reviews(soup, dictionary):
     reviews = soup.find_all("div", {"class": "single-review"})
     amount_reviews = 0 if reviews is None else len(reviews)
@@ -24,7 +28,7 @@ def get_reviews(soup, dictionary):
         dev_comment = review_parent.find("div", {"class": "developer-reply"})
 
         dev_name = "N/A"
-        dev_date = "N/A"
+        dev_date = "January 1, 1990"
         dev_reply = "N/A"
         if dev_comment is not None:
             dev_name = dev_comment.div.find("span", {"class": "author-name"}).string
@@ -32,13 +36,13 @@ def get_reviews(soup, dictionary):
             dev_reply = dev_comment.get_text().replace(dev_name, "").replace(dev_date, "").strip()
 
         current_review = {"author": "N/A" if review_author is None else review_author.string,
-                          "date": "N/A" if review_date is None else review_date.string,
-                          "rating": "N/A" if review_rating is None else review_rating["aria-label"].split("stars")[0].replace("Rated", "").strip(),
+                          "date": "N/A" if review_date is None else get_date(review_date.string),
+                          "rating": -1.0 if review_rating is None else float(round(Decimal(review_rating["aria-label"].split("stars")[0].replace("Rated", "").strip()),3)),
                           "title": "N/A" if review_title is None else review_title,
                           "text": review_text,
                           "dev_name": dev_name,
                           "dev_reply": dev_reply,
-                          "dev_reply_date": dev_date,
+                          "dev_reply_date": get_date(dev_date),
                           "app_id": dictionary["id"],
                           "app_retrieved_date": dictionary["retrieved_date"],
                           "app_name": dictionary["name"]
@@ -47,3 +51,9 @@ def get_reviews(soup, dictionary):
         data_reviews.append(current_review)
 
     return dictionary, data_reviews
+
+
+def get_date(string_date):
+    date_time_obj = datetime.datetime.strptime(string_date, "%B %d, %Y")
+
+    return date_time_obj

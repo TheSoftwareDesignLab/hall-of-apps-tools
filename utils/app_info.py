@@ -47,12 +47,12 @@ def get_rating(soup, dictionary):
     temp_1 = soup.find("div", {"class": "rating-bar-container one"})
     rating_1 = "0" if temp_1 is None else temp_1.find("span", {"class": "bar-number"}).string
 
-    dictionary["rating"] = 0 if rating is None else float(round(Decimal(rating["content"]), 3))
-    dictionary["rating_5"] = 0 if rating_5 is None else int(rating_5.replace(",", ""))
-    dictionary["rating_4"] = 0 if rating_4 is None else int(rating_4.replace(",", ""))
-    dictionary["rating_3"] = 0 if rating_3 is None else int(rating_3.replace(",", ""))
-    dictionary["rating_2"] = 0 if rating_2 is None else int(rating_2.replace(",", ""))
-    dictionary["rating_1"] = 0 if rating_1 is None else int(rating_1.replace(",", ""))
+    dictionary["rating"] = -1 if rating is None else float(round(Decimal(rating["content"]), 3))
+    dictionary["rating_5"] = -1 if rating_5 is None else int(rating_5.replace(",", ""))
+    dictionary["rating_4"] = -1 if rating_4 is None else int(rating_4.replace(",", ""))
+    dictionary["rating_3"] = -1 if rating_3 is None else int(rating_3.replace(",", ""))
+    dictionary["rating_2"] = -1 if rating_2 is None else int(rating_2.replace(",", ""))
+    dictionary["rating_1"] = -1 if rating_1 is None else int(rating_1.replace(",", ""))
 
     return dictionary
 
@@ -87,5 +87,20 @@ def get_dev_info(soup, dictionary):
     dictionary["dev_name"] = "N/A" if dev is None else dev.string
     dictionary["dev_mail"] = "N/A" if dev_mail is None else dev_mail.string.replace("Email", "").strip()
     dictionary["dev_address"] = "N/A" if dev_address is None else str(dev_address)
+
+    return dictionary
+
+
+def get_whats_new(soup, dictionary):
+    temp = soup.find("div", {"class": "details-section whatsnew"})
+    list_news = []
+
+    if temp is not None and temp.div is not None:
+        whats_new = temp.div
+        news = whats_new.find_all("div", {"class": "recent-change"})
+        for change in news:
+            list_news.append(change.string.strip())
+
+    dictionary["whats_new"] = list_news
 
     return dictionary

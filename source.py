@@ -1,14 +1,24 @@
 import os
 import pandas as pd
 from bs4 import BeautifulSoup
+import pymongo
 import utils.app_info as ai
 import utils.reviews_info as ri
 import utils.extra_apps_info as eai
 
 
 current_folder = "20171105-20171111"
-path = "/home/mariacamila/Documents/Laura/data/%s/" % current_folder
-path_processed = "/home/mariacamila/Documents/Laura/processed/%s/" % current_folder
+
+path = "data/"
+
+#path = "/home/mariacamila/Documents/Laura/data/%s/" % current_folder
+#path_processed = "/home/mariacamila/Documents/Laura/processed/%s/" % current_folder
+
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+db = client["mining"]
+app_collection = db["app"]
+review_collection = db["review"]
+extra_app_collection = db["extra_app"]
 
 
 def main():
@@ -36,6 +46,7 @@ def main():
         dictionary = ai.get_basic_info(soup, file, dictionary)
         dictionary = ai.get_tech_info(soup, dictionary)
         dictionary = ai.get_rating(soup, dictionary)
+        dictionary = ai.get_whats_new(soup, dictionary)
         dictionary = ai.get_dev_info(soup, dictionary)
 
         dictionary, data_reviews = ri.get_reviews(soup, dictionary)
@@ -48,6 +59,21 @@ def main():
         extra_apps.extend(data_similar)
         extra_apps.extend(data_more)
 
+        if counter == 2:
+            df_apps = pd.DataFrame(data)
+            df_reviews = pd.DataFrame(reviews)
+            df_extra_apps = pd.DataFrame(extra_apps)
+
+            print(df_reviews.columns)
+            print(df_reviews.dtypes)
+            print(df_reviews["rating"])
+            #print(df_reviews["date"])
+            print(df_reviews["dev_reply_date"])
+            #print(len(df_apps["genre"][0]))
+            #print(len(df_apps["whats_new"][0]))
+
+            break
+
         if counter % 100 == 0:
             write_csv(data, reviews, extra_apps, counter)
             print("WRITTEN {0} apps more".format(counter))
@@ -55,7 +81,7 @@ def main():
             reviews = []
             extra_apps = []
 
-    write_csv(data, reviews, extra_apps, counter)
+    #write_csv(data, reviews, extra_apps, counter)
     print("WRITTEN {0} apps more".format(counter))
 
 
