@@ -30,24 +30,39 @@ def get_reviews(soup, dictionary):
         dev_name = "N/A"
         dev_date = "January 1, 1990"
         dev_reply = "N/A"
+
         if dev_comment is not None:
             dev_name = dev_comment.div.find("span", {"class": "author-name"}).string
             dev_date = dev_comment.div.find("span", {"class": "review-date"}).string
             dev_reply = dev_comment.get_text().replace(dev_name, "").replace(dev_date, "").strip()
 
-        current_review = {"author": "N/A" if review_author is None else review_author.string,
-                          "date": get_date("January 1, 1990") if review_date is None else get_date(review_date.string),
-                          "rating": -1.0 if review_rating is None else float(round(Decimal(review_rating["aria-label"].split("stars")[0].replace("Rated", "").strip()),3)),
-                          "title": "N/A" if review_title is None else review_title,
-                          "text": review_text,
-                          "dev_name": dev_name,
-                          "dev_reply": dev_reply,
-                          "dev_reply_date": get_date(dev_date),
-                          "app_id": dictionary["id"],
-                          "app_retrieved_date_start": dictionary["retrieved_date_start"],
-                          "app_retrieved_date_end": dictionary["retrieved_date_end"],
-                          "app_name": dictionary["name"]
-                          }
+        # los saque para poder hacer el
+        author = "N/A" if review_author is None else review_author.string
+        date =  get_date("January 1, 1990") if review_date is None else get_date(review_date.string)
+
+        current_review = {
+                        #"author": "N/A" if review_author is None else review_author.string,
+                        #"date": get_date("January 1, 1990") if review_date is None else get_date(review_date.string),
+                        "rating": -1.0 if review_rating is None else float(round(Decimal(review_rating["aria-label"].split("stars")[0].replace("Rated", "").strip()),3)),
+                        "title": "N/A" if review_title is None else review_title,
+                        "text": review_text,
+                        "dev_name": dev_name,
+                        "dev_reply": dev_reply,
+                        "dev_reply_date": get_date(dev_date),
+                        
+                        "app_id": dictionary["_id"]["id"],
+                        "app_retrieved_date_start": dictionary["_id"]["retrieved_date_start"],
+                        "app_retrieved_date_end": dictionary["_id"]["retrieved_date_end"],
+                        "app_name": dictionary["name"],
+                        "_id":{}
+                        }
+        current_review["_id"]["author"]= author
+        current_review["_id"]["date"]= date
+        #Esto no se puede porque una app puede tener más de un revoew y comparte las mismas fechas de extracción
+        #current_review["_id"]["app_id"] = dictionary["_id"]["id"]
+        #current_review["_id"]["app_retrieved_date_start"] = dictionary["_id"]["retrieved_date_start"]
+        #current_review["_id"]["app_retrieved_date_end"] = dictionary["_id"]["retrieved_date_end"]
+
 
         data_reviews.append(current_review)
 
@@ -55,6 +70,8 @@ def get_reviews(soup, dictionary):
 
 
 def get_date(string_date):
+    """Docstring
+    """
     date_time_obj = datetime.datetime.strptime(string_date, "%B %d, %Y")
 
     return date_time_obj

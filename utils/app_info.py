@@ -19,19 +19,24 @@ def get_basic_info(soup, file, dictionary):
     country = file_info[1]
     category = file_info[2]
 
-    dictionary["id"] = "N/A" if app_id is None else app_id["data-docid"].strip()
-    dictionary["name"] = "N/A" if app_name is None else app_name.string.strip()
-    dictionary["summary"] = "N/A" if app_description is None else app_description["content"].strip()
-    dictionary["url"] = "N/A" if app_url is None else app_url["content"].strip()
-    dictionary["category"] = "N/A" if category is None else category
-    dictionary["country"] = "N/A" if country is None else country
+    dictionary["name"] = "N/A" if not app_name  else app_name.string.strip()
+    dictionary["summary"] = "N/A" if not app_description else app_description["content"].strip()
+    dictionary["url"] = "N/A" if not app_url else app_url["content"].strip()
+    dictionary["category"] = "N/A" if not category else category
+    dictionary["country"] = "N/A" if not country else country
 
-    dictionary["retrieved_date_start"] = get_retrieved_date("1990011") if retrieved_date_start is None else get_retrieved_date(retrieved_date_start)
-    dictionary["retrieved_date_end"] = get_retrieved_date("1990011") if retrieved_date_end is None else get_retrieved_date(retrieved_date_end)
+    id_id = "N/A" if not app_id  else app_id["data-docid"].strip()
+    retrieved_date_start= get_retrieved_date("1990011") if not retrieved_date_start else get_retrieved_date(retrieved_date_start)
+    retrieved_date_end = get_retrieved_date("1990011") if retrieved_date_end is None else get_retrieved_date(retrieved_date_end)
 
-    dictionary["genre"] = ["N/A"] if genre is None else genre.string.split("&")
-    dictionary["price"] = "N/A" if price is None else price["content"].strip()
-    dictionary["description"] = "N/A" if description is None else description.strip()
+    dictionary["_id"] = {}
+    dictionary["_id"]["id"] = id_id
+    dictionary["_id"]["retrieved_date_start"] = retrieved_date_start
+    dictionary["_id"]["retrieved_date_end"] = retrieved_date_end
+
+    dictionary["genre"] = ["N/A"] if not genre else genre.string.split("&")
+    dictionary["price"] = "N/A" if not price else price["content"].strip()
+    dictionary["description"] = "N/A" if not description else description.strip()
 
     return dictionary
 
