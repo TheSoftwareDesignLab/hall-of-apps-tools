@@ -11,10 +11,8 @@ current_folder = "20171105-20171111"
 
 path = "data/"
 
-#path = "/home/mariacamila/Documents/Laura/data/%s/" % current_folder
 path = f'D:/lauBello/data/'
 
-#path_processed = "/home/mariacamila/Documents/Laura/processed/%s/" % current_folder
 #path_processed = f"D:/lauBello/data/{current_folder}" 
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -60,7 +58,7 @@ def main():
         dictionary, data_similar = eai.get_apps(soup,\
             "cards expandable id-card-list", dictionary, "similar")
         dictionary, data_more = eai.get_apps(soup,\
-            "more-from-developer", dictionary, "more-from-developer")
+            "more-from-developer", dictionary, "more_from_developer")
 
         data.append(dictionary)
         extra_apps.extend(data_similar)
@@ -71,29 +69,14 @@ def main():
             save_mongo("review",reviews)
             save_mongo("extra_app",extra_apps)
 
-            #df_apps = pd.DataFrame(data)
-            #df_reviews = pd.DataFrame(reviews)
-            #df_extra_apps = pd.DataFrame(extra_apps)
-
-            #print(df_apps.columns)
-            #print(df_apps.dtypes)
-
-            #print(df_reviews.columns)
-            #print(df_reviews.dtypes)
-
-            #print(df_extra_apps.columns)
-            #print(df_extra_apps.dtypes)
-
             break
 
         if counter % 100 == 0:
-            #write_csv(data, reviews, extra_apps, counter)
             print(f'WRITTEN {counter+1} apps more')
             data = []
             reviews = []
             extra_apps = []
 
-    #write_csv(data, reviews, extra_apps, counter)
     print(f'WRITTEN {counter} apps more')
 
 
@@ -104,25 +87,6 @@ def save_mongo(collection_db, data):
     db[collection_db].insert_many(data)
     print("-*-"*5)
 
-def read_csv(csv_path):
-    current_csv = pd.read_csv(csv_path)
-    print(csv_path + " " + str(current_csv.shape))
-
-def write_csv(data, reviews, extra_apps, counter):
-    df_apps = pd.DataFrame(data)
-    df_reviews = pd.DataFrame(reviews)
-    df_extra_apps = pd.DataFrame(extra_apps)
-
-    if not os.path.exists(path_processed):
-        os.mkdir(path_processed)
-
-    apps_path = "{0}apps{1}.csv".format(path_processed, counter)
-    reviews_path = "{0}reviews{1}.csv".format(path_processed, counter)
-    extra_apps_path = "{0}extra_apps{1}.csv".format(path_processed, counter)
-
-    df_apps.to_csv(apps_path, index=False)
-    df_reviews.to_csv(reviews_path, index=False)
-    df_extra_apps.to_csv(extra_apps_path, index=False)
 
 if __name__ == "__main__":
     """ Ypu have to do the Python's main in this way. Otherwise all 

@@ -19,24 +19,24 @@ def get_basic_info(soup, file, dictionary):
     country = file_info[1]
     category = file_info[2]
 
-    dictionary["name"] = "N/A" if not app_name  else app_name.string.strip()
-    dictionary["summary"] = "N/A" if not app_description else app_description["content"].strip()
-    dictionary["url"] = "N/A" if not app_url else app_url["content"].strip()
-    dictionary["category"] = "N/A" if not category else category
-    dictionary["country"] = "N/A" if not country else country
+    dictionary["name"] = app_name.string.strip() if app_name else app_name
+    dictionary["summary"] = app_description["content"].strip() if app_description else app_description
+    dictionary["url"] = app_url["content"].strip() if app_url else app_url
+    dictionary["category"] = category
+    dictionary["country"] = country
 
-    id_id = "N/A" if not app_id  else app_id["data-docid"].strip()
-    retrieved_date_start= get_retrieved_date("1990011") if not retrieved_date_start else get_retrieved_date(retrieved_date_start)
-    retrieved_date_end = get_retrieved_date("1990011") if retrieved_date_end is None else get_retrieved_date(retrieved_date_end)
+    id_id = app_id["data-docid"].strip() if app_id else app_id
+    retrieved_date_start = get_retrieved_date(retrieved_date_start) if retrieved_date_start else retrieved_date_start
+    retrieved_date_end = get_retrieved_date(retrieved_date_end) if retrieved_date_end else retrieved_date_end
 
     dictionary["_id"] = {}
     dictionary["_id"]["id"] = id_id
     dictionary["_id"]["retrieved_date_start"] = retrieved_date_start
     dictionary["_id"]["retrieved_date_end"] = retrieved_date_end
 
-    dictionary["genre"] = ["N/A"] if not genre else genre.string.split("&")
-    dictionary["price"] = "N/A" if not price else price["content"].strip()
-    dictionary["description"] = "N/A" if not description else description.strip()
+    dictionary["genre"] = genre.string.split("&") if genre else genre
+    dictionary["price"] = price["content"].strip() if price else price
+    dictionary["description"] = description.strip() if description else description
 
     return dictionary
 
@@ -44,26 +44,26 @@ def get_basic_info(soup, file, dictionary):
 def get_rating(soup, dictionary):
     rating = soup.find("meta", {"itemprop": "ratingValue"})
     temp_5 = soup.find("div", {"class": "rating-bar-container five"})
-    rating_5 = "0" if temp_5 is None else temp_5.find("span", {"class": "bar-number"}).string
+    rating_5 = temp_5.find("span", {"class": "bar-number"}).string if temp_5 else temp_5
 
     temp_4 = soup.find("div", {"class": "rating-bar-container four"})
-    rating_4 = "0" if temp_4 is None else temp_4.find("span", {"class": "bar-number"}).string
+    rating_4 = temp_4.find("span", {"class": "bar-number"}).string if temp_4 else temp_4
 
     temp_3 = soup.find("div", {"class": "rating-bar-container three"})
-    rating_3 = "0" if temp_3 is None else temp_3.find("span", {"class": "bar-number"}).string
+    rating_3 = temp_3.find("span", {"class": "bar-number"}).string if temp_3 else temp_3
 
     temp_2 = soup.find("div", {"class": "rating-bar-container two"})
-    rating_2 = "0" if temp_2 is None else temp_2.find("span", {"class": "bar-number"}).string
+    rating_2 = temp_2.find("span", {"class": "bar-number"}).string if temp_2 else temp_2
 
     temp_1 = soup.find("div", {"class": "rating-bar-container one"})
-    rating_1 = "0" if temp_1 is None else temp_1.find("span", {"class": "bar-number"}).string
+    rating_1 = temp_1.find("span", {"class": "bar-number"}).string if temp_1 else temp_1
 
-    dictionary["rating"] = -1 if rating is None else float(round(Decimal(rating["content"]), 3))
-    dictionary["rating_5"] = -1 if rating_5 is None else int(rating_5.replace(",", ""))
-    dictionary["rating_4"] = -1 if rating_4 is None else int(rating_4.replace(",", ""))
-    dictionary["rating_3"] = -1 if rating_3 is None else int(rating_3.replace(",", ""))
-    dictionary["rating_2"] = -1 if rating_2 is None else int(rating_2.replace(",", ""))
-    dictionary["rating_1"] = -1 if rating_1 is None else int(rating_1.replace(",", ""))
+    dictionary["rating"] = float(round(Decimal(rating["content"]), 3)) if rating else rating
+    dictionary["rating_5"] = int(rating_5.replace(",", "")) if rating_5 else rating_5
+    dictionary["rating_4"] = int(rating_4.replace(",", "")) if rating_4 else rating_4
+    dictionary["rating_3"] = int(rating_3.replace(",", "")) if rating_3 else rating_3
+    dictionary["rating_2"] = int(rating_2.replace(",", "")) if rating_2 else rating_2
+    dictionary["rating_1"] = int(rating_1.replace(",", "")) if rating_1 else rating_1
 
     return dictionary
 
@@ -75,11 +75,11 @@ def get_tech_info(soup, dictionary):
     android_versions = soup.find("div", {"itemprop": "operatingSystems"})
     content_rating = soup.find("div", {"itemprop": "contentRating"})
 
-    dictionary["last_update"] = get_date("January 1, 1990") if date_updated is None else get_date(date_updated.string.strip())
-    dictionary["num_installs"] = "N/A" if num_installs is None else num_installs.string.strip()
-    dictionary["current_version"] = "N/A" if current_version is None else current_version.string.strip()
-    dictionary["android_version"] = "N/A" if android_versions is None else android_versions.string.strip()
-    dictionary["content_rating"] = "N/A" if content_rating is None else content_rating.string.strip()
+    dictionary["last_update"] = get_date(date_updated.string.strip()) if date_updated else date_updated
+    dictionary["num_installs"] = num_installs.string.strip() if num_installs else num_installs
+    dictionary["current_version"] = current_version.string.strip() if current_version else current_version
+    dictionary["android_version"] = android_versions.string.strip() if android_versions else android_versions
+    dictionary["content_rating"] = content_rating.string.strip() if content_rating else content_rating
 
     return dictionary
 
@@ -94,14 +94,10 @@ def get_dev_info(soup, dictionary):
     dev = soup.find("a", {"class": "document-subtitle primary"}).span
     dev_mail = soup.find(is_dev_email)
     dev_address = soup.find("div", {"class": "content physical-address"})
-    #yo lo haría así
-    # dictionary["dev_name"] = dev.string if dev is not None else dev
-    # o tambien así
-    #dictionary["dev_name"] = dev.string if dev else dev
-    
-    dictionary["dev_name"] = "N/A" if dev is None else dev.string
-    dictionary["dev_mail"] = "N/A" if dev_mail is None else dev_mail.string.replace("Email", "").strip()
-    dictionary["dev_address"] = "N/A" if dev_address is None else str(dev_address)
+
+    dictionary["dev_name"] = dev.string if dev else dev
+    dictionary["dev_mail"] = dev_mail.string.replace("Email", "").strip() if dev_mail else dev_mail
+    dictionary["dev_address"] = str(dev_address) if dev_address else dev_address
 
     return dictionary
 
