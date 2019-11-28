@@ -1,6 +1,13 @@
 from decimal import *
 import datetime
 
+currencies = {
+    "br": "R$",
+    "us": "$",
+    "de": "€",
+    "co": "COP",
+}
+
 
 def get_basic_info(soup, file, dictionary):
 
@@ -18,12 +25,16 @@ def get_basic_info(soup, file, dictionary):
     retrieved_date_end = retrieved_date[1]
     country = file_info[1]
     category = file_info[2]
+    
+    splitted = category.split("_")
+    top = splitted[len(splitted)-1]
 
     dictionary["name"] = app_name.string.strip() if app_name else app_name
     dictionary["summary"] = app_description["content"].strip() if app_description else app_description
     dictionary["url"] = app_url["content"].strip() if app_url else app_url
     dictionary["category"] = category
     dictionary["country"] = country
+    dictionary["top"] = top
 
     id_id = app_id["data-docid"].strip() if app_id else app_id
     retrieved_date_start = get_retrieved_date(retrieved_date_start) if retrieved_date_start else retrieved_date_start
@@ -35,7 +46,8 @@ def get_basic_info(soup, file, dictionary):
     dictionary["_id"]["retrieved_date_end"] = retrieved_date_end
 
     dictionary["genre"] = genre.string.split("&") if genre else genre
-    dictionary["price"] = price["content"].strip() if price else price
+    dictionary["price"] = get_decimal_price(price["content"].strip(), country) if price else price
+    dictionary["currency"] = currencies[country]
     dictionary["description"] = description.strip() if description else description
 
     return dictionary
@@ -125,3 +137,13 @@ def get_date(string_date):
 def get_retrieved_date(retrieved_date):
 
     return datetime.datetime.strptime(retrieved_date, "%Y%m%d")
+
+
+def get_decimal_price(price, country):
+    price = price.replace(currencies[country], "")
+    if country == "co":
+        price = price.replace(",", "")
+    elif country == "de":
+        price = price.replace(",", ".")
+
+    return round(Decimal(price), 2)

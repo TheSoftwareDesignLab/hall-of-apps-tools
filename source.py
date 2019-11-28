@@ -1,5 +1,4 @@
 import os
-import pandas as pd
 from bs4 import BeautifulSoup
 import pymongo
 import utils.app_info as ai
@@ -11,36 +10,27 @@ current_folder = "20171105-20171111"
 
 path = "data/"
 
-path = f'D:/lauBello/data/'
-
+#path = f'D:/lauBello/data/'
 #path_processed = f"D:/lauBello/data/{current_folder}" 
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["mining"]
-#app_collection = db["app"]
-#review_collection = db["review"]
-#extra_app_collection = db["extra_app"]
 
 
 def main():
     """ Here you have to put the documentation for the function
     """
 
-    counter = 0
-
     files_folder = os.listdir(path)
     files_folder.sort()
     files_amount = len(files_folder)
     print(f'AMOUNT OF FILES {files_amount}')
-    data = []
-    reviews = []
-    extra_apps = []
 
     for counter, file in enumerate(files_folder):
         
         print(str(counter), "-", file)
 
-        with open(os.path.join(path,file), "r") as html_file:
+        with open(os.path.join(path, file), "r") as html_file:
             html_content = html_file.read()
 
         dictionary = {}
@@ -53,31 +43,22 @@ def main():
         dictionary = ai.get_dev_info(soup, dictionary)
 
         dictionary, data_reviews = ri.get_reviews(soup, dictionary)
-        reviews.extend(data_reviews)
 
         dictionary, data_similar = eai.get_apps(soup,\
             "cards expandable id-card-list", dictionary, "similar")
         dictionary, data_more = eai.get_apps(soup,\
             "more-from-developer", dictionary, "more_from_developer")
 
-        data.append(dictionary)
-        extra_apps.extend(data_similar)
+        extra_apps = data_similar
         extra_apps.extend(data_more)
 
-        if counter == 1:
-            save_mongo("app",data)
-            save_mongo("review",reviews)
-            save_mongo("extra_app",extra_apps)
+        save_mongo("app", [dictionary])
+        save_mongo("review", data_reviews)
+        save_mongo("extra_app", extra_apps)
 
-            break
+        print(f'WRITTEN {counter + 1} apps more')
 
-        if counter % 100 == 0:
-            print(f'WRITTEN {counter+1} apps more')
-            data = []
-            reviews = []
-            extra_apps = []
-
-    print(f'WRITTEN {counter} apps more')
+    print("")
 
 
 def save_mongo(collection_db, data):
