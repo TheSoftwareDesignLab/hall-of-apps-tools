@@ -56,10 +56,16 @@ def main():
                 dictionary = {}
 
                 soup = BeautifulSoup(html_content, "html.parser")
-                dictionary = ai.get_basic_info(soup, file, dictionary)
-                dictionary = ai.get_tech_info(soup, dictionary)
-                dictionary = ai.get_rating(soup, dictionary)
-                dictionary = ai.get_whats_new(soup, dictionary)
+
+                is_new_page = False
+                page_format = soup.find("base", {"href": "https://play.google.com/"})
+                if page_format is not None:
+                    is_new_page = True
+
+                dictionary = ai.get_basic_info(soup, file, dictionary, is_new_page)
+                dictionary = ai.get_tech_info(soup, dictionary, is_new_page)
+                dictionary = ai.get_rating(soup, dictionary, is_new_page)
+                dictionary = ai.get_whats_new(soup, dictionary, is_new_page)
                 dictionary = ai.get_dev_info(soup, dictionary)
 
                 dictionary, data_reviews = ri.get_reviews(soup, dictionary)
