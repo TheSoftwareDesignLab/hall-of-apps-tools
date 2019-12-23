@@ -39,13 +39,6 @@ def get_basic_info(soup, file, dictionary):
     retrieved_date_start = get_retrieved_date(retrieved_date_start) if retrieved_date_start else retrieved_date_start
     retrieved_date_end = get_retrieved_date(retrieved_date_end) if retrieved_date_end else retrieved_date_end
 
-    #dictionary["_id"] = {}
-    #dictionary["_id"]["id"] = id_id
-    #dictionary["_id"]["retrieved_date_start"] = retrieved_date_start
-    #dictionary["_id"]["retrieved_date_end"] = retrieved_date_end
-    #dictionary["_id"]["category"] = category
-    #dictionary["_id"]["country"] = country
-
     dictionary["id"] = file_id
     dictionary["retrieved_date_start"] = retrieved_date_start
     dictionary["retrieved_date_end"] = retrieved_date_end
