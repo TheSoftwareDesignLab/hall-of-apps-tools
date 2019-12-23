@@ -6,12 +6,14 @@ import utils.reviews_info as ri
 import utils.extra_apps_info as eai
 
 
-current_folder = "20171105-20171111"
-
-path = "data/"
-
-#path = f'D:/lauBello/data/'
-#path_processed = f"D:/lauBello/data/{current_folder}" 
+ignore_folders = ["20171105-20171111",
+                  "20171112-20171118",
+                  "20171119-20171125",
+                  "20171126-20171202",
+                  "20171203-20171209",
+                  "20171210-20171216",
+                  "2017115-20171111%br%editorChoice%cc.pacer.androidapp.html",
+                  "appsRetrieved.json", "processed", "raw_html", "RESULTS", "testData", "toProcess"]
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["mining"]
@@ -20,52 +22,61 @@ db = client["mining"]
 def main():
     """ Here you have to put the documentation for the function
     """
+    folders = os.listdir("/Volumes/Elements/data")
 
-    files_folder = os.listdir(path)
-    files_folder.sort()
-    files_amount = len(files_folder)
-    print(f'AMOUNT OF FILES {files_amount}')
+    for current_folder in folders:
+        if current_folder not in ignore_folders:
+            path = f'/Volumes/Elements/data/{current_folder}'
+            files_folder = os.listdir(path)
+            files_folder.sort()
+            files_amount = len(files_folder)
+            print(f'AMOUNT OF FILES {files_amount}')
 
-    for counter, file in enumerate(files_folder):
+            for counter, file in enumerate(files_folder):
         
-        print(str(counter), "-", file)
+                print(str(counter+1), "-", file)
 
-        with open(os.path.join(path, file), "r") as html_file:
-            html_content = html_file.read()
+                if current_folder == "20171217-20171223":
+                    if counter < 14593:
+                        continue
 
-        dictionary = {}
+                with open(os.path.join(path, file), "r") as html_file:
+                    html_content = html_file.read()
 
-        soup = BeautifulSoup(html_content, "html.parser")
-        dictionary = ai.get_basic_info(soup, file, dictionary)
-        dictionary = ai.get_tech_info(soup, dictionary)
-        dictionary = ai.get_rating(soup, dictionary)
-        dictionary = ai.get_whats_new(soup, dictionary)
-        dictionary = ai.get_dev_info(soup, dictionary)
+                dictionary = {}
 
-        dictionary, data_reviews = ri.get_reviews(soup, dictionary)
+                soup = BeautifulSoup(html_content, "html.parser")
+                dictionary = ai.get_basic_info(soup, file, dictionary)
+                dictionary = ai.get_tech_info(soup, dictionary)
+                dictionary = ai.get_rating(soup, dictionary)
+                dictionary = ai.get_whats_new(soup, dictionary)
+                dictionary = ai.get_dev_info(soup, dictionary)
 
-        dictionary, data_similar = eai.get_apps(soup,\
-            "cards expandable id-card-list", dictionary, "similar")
-        dictionary, data_more = eai.get_apps(soup,\
-            "more-from-developer", dictionary, "more_from_developer")
+                dictionary, data_reviews = ri.get_reviews(soup, dictionary)
 
-        extra_apps = data_similar
-        extra_apps.extend(data_more)
+                dictionary, data_similar = eai.get_apps(soup,\
+                    "cards expandable id-card-list", dictionary, "similar")
+                dictionary, data_more = eai.get_apps(soup,\
+                    "more-from-developer", dictionary, "more_from_developer")
 
-        save_mongo("app", [dictionary])
-        save_mongo("review", data_reviews)
-        save_mongo("extra_app", extra_apps)
+                extra_apps = data_similar
+                extra_apps.extend(data_more)
 
-        print(f'WRITTEN {counter + 1} apps more')
+                save_mongo("app", [dictionary])
+                save_mongo("review", data_reviews)
+                save_mongo("extra_app", extra_apps)
 
-    print("")
+                print(f'WRITTEN {counter + 1} apps more')
+
+            print("")
 
 
 def save_mongo(collection_db, data):
     """
     """
     print("-*-"*5)
-    db[collection_db].insert_many(data)
+    if len(data) > 0:
+        db[collection_db].insert_many(data)
     print("-*-"*5)
 
 

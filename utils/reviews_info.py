@@ -38,25 +38,22 @@ def get_reviews(soup, dictionary):
 
         author = review_author.string if review_author else review_author
         date = get_date(review_date.string) if review_date else review_date
-        app_id = dictionary["_id"]["id"]
+        app_id = dictionary["id"]
 
         current_review = {
                         "rating": float(round(Decimal(review_rating["aria-label"].split("stars")[0].replace("Rated", "").strip()), 3)) if review_rating else review_rating,
                         "title": review_title,
+                        "author": author,
                         "text": review_text,
+                        "date": date,
                         "dev_name": dev_name,
                         "dev_reply": dev_reply,
                         "dev_reply_date": get_date(dev_date) if dev_date else dev_date,
-
-                        "app_retrieved_date_start": dictionary["_id"]["retrieved_date_start"],
-                        "app_retrieved_date_end": dictionary["_id"]["retrieved_date_end"],
-                        "app_name": dictionary["name"],
-                        "_id": {}
+                        "app_id": app_id,
+                        "app_retrieved_date_start": dictionary["retrieved_date_start"],
+                        "app_retrieved_date_end": dictionary["retrieved_date_end"],
+                        "app_name": dictionary["name"]
                         }
-
-        current_review["_id"]["author"] = author
-        current_review["_id"]["date"] = date
-        current_review["_id"]["app_id"] = app_id
 
         data_reviews.append(current_review)
 

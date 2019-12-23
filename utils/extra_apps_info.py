@@ -32,14 +32,23 @@ def get_apps(soup, class_content, dictionary, state):
                     "summary": similar_description.strip() if similar_description else similar_description,
                     "rating": float(round(Decimal(similar_rating.div["aria-label"].split("stars")[0].replace("Rated", "").strip()), 3)) if similar_rating else similar_rating,
                     "app_name": dictionary["name"],
-                    "_id": {}
+                    "id": id_extra_app,
+                    "state": state,
+                    "app_id": dictionary["id"],
+                    "app_retrieved_date_start": dictionary["retrieved_date_start"],
+                    "app_retrieved_date_end": dictionary["retrieved_date_end"],
+                    "category": dictionary["category"],
+                    "country": dictionary["country"]
+                    #"_id": {}
                     }
 
-        current_app["_id"]["id"] = id_extra_app
-        current_app["_id"]["state"] = state
-        current_app["_id"]["app_id"] = dictionary["_id"]["id"]
-        current_app["_id"]["app_retrieved_date_start"] = dictionary["_id"]["retrieved_date_start"]
-        current_app["_id"]["app_retrieved_date_end"] = dictionary["_id"]["retrieved_date_end"]
+        #current_app["_id"]["id"] = id_extra_app
+        #current_app["_id"]["state"] = state
+        #current_app["_id"]["app_id"] = dictionary["_id"]["id"]
+        #current_app["_id"]["app_retrieved_date_start"] = dictionary["_id"]["retrieved_date_start"]
+        #current_app["_id"]["app_retrieved_date_end"] = dictionary["_id"]["retrieved_date_end"]
+        #current_app["_id"]["category"] = dictionary["_id"]["category"]
+        #current_app["_id"]["country"] = dictionary["_id"]["country"]
 
         data_apps.append(current_app)
 

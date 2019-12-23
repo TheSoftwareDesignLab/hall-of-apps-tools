@@ -15,9 +15,9 @@ def get_basic_info(soup, file, dictionary):
     app_name = soup.find("div", {"class": "id-app-title"})
     app_description = soup.find("meta", {"name": "description"})
     app_url = soup.find("meta", {"property": "og:url"})
-    genre = soup.find("a", {"class": "document-subtitle category"}).span
+    genre = soup.find("a", {"class": "document-subtitle category"}).span if soup.find("a", {"class": "document-subtitle category"}) else soup.find("a", {"class": "document-subtitle category"})
     price = soup.find("meta", {"itemprop": "price"})
-    description = soup.find("div", {"class": "show-more-content text-body", "itemprop": "description"}).get_text()
+    description = soup.find("div", {"class": "show-more-content text-body", "itemprop": "description"}).get_text() if soup.find("div", {"class": "show-more-content text-body", "itemprop": "description"}) else soup.find("div", {"class": "show-more-content text-body", "itemprop": "description"})
 
     file_info = file.split("%")
     retrieved_date = file_info[0].split("-")
@@ -25,6 +25,7 @@ def get_basic_info(soup, file, dictionary):
     retrieved_date_end = retrieved_date[1]
     country = file_info[1]
     category = file_info[2]
+    file_id = file_info[3].replace(".html","")
     
     splitted = category.split("_")
     top = splitted[len(splitted)-1]
@@ -32,18 +33,24 @@ def get_basic_info(soup, file, dictionary):
     dictionary["name"] = app_name.string.strip() if app_name else app_name
     dictionary["summary"] = app_description["content"].strip() if app_description else app_description
     dictionary["url"] = app_url["content"].strip() if app_url else app_url
-    dictionary["category"] = category
-    dictionary["country"] = country
     dictionary["top"] = top
 
     id_id = app_id["data-docid"].strip() if app_id else app_id
     retrieved_date_start = get_retrieved_date(retrieved_date_start) if retrieved_date_start else retrieved_date_start
     retrieved_date_end = get_retrieved_date(retrieved_date_end) if retrieved_date_end else retrieved_date_end
 
-    dictionary["_id"] = {}
-    dictionary["_id"]["id"] = id_id
-    dictionary["_id"]["retrieved_date_start"] = retrieved_date_start
-    dictionary["_id"]["retrieved_date_end"] = retrieved_date_end
+    #dictionary["_id"] = {}
+    #dictionary["_id"]["id"] = id_id
+    #dictionary["_id"]["retrieved_date_start"] = retrieved_date_start
+    #dictionary["_id"]["retrieved_date_end"] = retrieved_date_end
+    #dictionary["_id"]["category"] = category
+    #dictionary["_id"]["country"] = country
+
+    dictionary["id"] = file_id
+    dictionary["retrieved_date_start"] = retrieved_date_start
+    dictionary["retrieved_date_end"] = retrieved_date_end
+    dictionary["category"] = category
+    dictionary["country"] = country
 
     dictionary["genre"] = genre.string.split("&") if genre else genre
     dictionary["price"] = get_decimal_price(price["content"].strip(), country) if price else price
@@ -103,7 +110,7 @@ def is_dev_email(tag):
 
 
 def get_dev_info(soup, dictionary):
-    dev = soup.find("a", {"class": "document-subtitle primary"}).span
+    dev = soup.find("a", {"class": "document-subtitle primary"}).span if soup.find("a", {"class": "document-subtitle primary"}) else soup.find("a", {"class": "document-subtitle primary"})
     dev_mail = soup.find(is_dev_email)
     dev_address = soup.find("div", {"class": "content physical-address"})
 
@@ -141,9 +148,9 @@ def get_retrieved_date(retrieved_date):
 
 def get_decimal_price(price, country):
     price = price.replace(currencies[country], "")
-    if country == "co":
+    if country in ["co", "br", "us"]:
         price = price.replace(",", "")
     elif country == "de":
         price = price.replace(",", ".")
 
-    return round(Decimal(price), 2)
+    return float(round(Decimal(price), 2))
