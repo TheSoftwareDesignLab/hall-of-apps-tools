@@ -22,12 +22,15 @@ ignore_folders = ["20171105-20171111",
                   "20180204-20180210",
                   "20180211-20180217",
                   "20180218-20180224",
+                  "20180225-20180303",
+                  "20180304-20180310",
                   "2017115-20171111%br%editorChoice%cc.pacer.androidapp.html",
                   "appsRetrieved.json", "processed", "raw_html", "RESULTS", "testData", "toProcess"]
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["mining"]
 
+is_testing_mode = True
 
 def main():
     """ Here you have to put the documentation for the function
@@ -37,21 +40,22 @@ def main():
     for current_folder in folders:
         if current_folder not in ignore_folders:
             path = f'/Volumes/Elements/data/{current_folder}'
+
+            # path = '/Volumes/Elements/data/20180408-20180414/'
+
             files_folder = os.listdir(path)
             files_folder.sort()
             files_amount = len(files_folder)
             print(f'AMOUNT OF FILES {files_amount}')
 
             for counter, file in enumerate(files_folder):
-        
                 print(str(counter+1), "-", file)
-
-                if current_folder == "20171217-20171223":
-                    if counter < 14593:
-                        continue
 
                 with open(os.path.join(path, file), "r") as html_file:
                     html_content = html_file.read()
+
+                if current_folder == '20180311-20180317' and counter < 4604:
+                    continue
 
                 dictionary = {}
 
@@ -66,14 +70,14 @@ def main():
                 dictionary = ai.get_tech_info(soup, dictionary, is_new_page)
                 dictionary = ai.get_rating(soup, dictionary, is_new_page)
                 dictionary = ai.get_whats_new(soup, dictionary, is_new_page)
-                dictionary = ai.get_dev_info(soup, dictionary)
+                dictionary = ai.get_dev_info(soup, dictionary, is_new_page)
 
-                dictionary, data_reviews = ri.get_reviews(soup, dictionary)
+                dictionary, data_reviews = ri.get_reviews(soup, dictionary, is_new_page)
 
                 dictionary, data_similar = eai.get_apps(soup,\
-                    "cards expandable id-card-list", dictionary, "similar")
+                    "cards expandable id-card-list", dictionary, "similar", is_new_page)
                 dictionary, data_more = eai.get_apps(soup,\
-                    "more-from-developer", dictionary, "more_from_developer")
+                    "more-from-developer", dictionary, "more_from_developer", is_new_page)
 
                 extra_apps = data_similar
                 extra_apps.extend(data_more)

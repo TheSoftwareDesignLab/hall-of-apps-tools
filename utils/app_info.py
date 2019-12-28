@@ -15,8 +15,8 @@ def get_basic_info(soup, file, dictionary, is_new_page):
     app_name = soup.find("div", {"class": "id-app-title"})
     app_description = soup.find("meta", {"name": "description"})
     app_url = soup.find("meta", {"property": "og:url"})
-    genre = soup.find("a", {"class": "document-subtitle category"}).span if soup.find("a", {"class": "document-subtitle category"}) else soup.find("a", {"class": "document-subtitle category"})
-    temp_genre = genre.string if genre else genre
+    temp_genre = soup.find("a", {"class": "document-subtitle category"}).span if soup.find("a", {"class": "document-subtitle category"}) else soup.find("a", {"class": "document-subtitle category"})
+    genre = temp_genre.string if temp_genre else temp_genre
     price = soup.find("meta", {"itemprop": "price"})
     description = soup.find("div", {"class": "show-more-content text-body", "itemprop": "description"}).get_text() if soup.find("div", {"class": "show-more-content text-body", "itemprop": "description"}) else soup.find("div", {"class": "show-more-content text-body", "itemprop": "description"})
 
@@ -68,13 +68,17 @@ def get_rating(soup, dictionary, is_new_page):
     if is_new_page:
         rating = soup.find("div", {"class": "BHMmbe"})
         rating = rating.string if rating else rating
-        final_rating = float(rating.strip())
+        rating = rating.strip() if rating else rating
+        final_rating = float(rating) if rating else rating
 
         all_ratings = soup.find_all("span", {"class": "UfW5d"})
         proc_rating = []
         for current_rating in all_ratings:
             c = current_rating.string if current_rating else current_rating
             proc_rating.append(c)
+
+        none_list = [None, None, None, None, None]
+        proc_rating.extend(none_list)
 
         rating_5 = proc_rating[0]
         rating_4 = proc_rating[1]
@@ -125,10 +129,12 @@ def get_tech_info(soup, dictionary, is_new_page):
         current_version = soup.find("div", string="Current Version")
         current_version = current_version.next_sibling if current_version else current_version
         current_version = current_version.span if current_version else current_version
+        current_version = current_version.string if current_version else current_version
 
         android_versions = soup.find("div", string="Requires Android")
         android_versions = android_versions.next_sibling if android_versions else android_versions
         android_versions = android_versions.span if android_versions else android_versions
+        android_versions = android_versions.string if android_versions else android_versions
 
         content_rating = soup.find("div", string="Content Rating")
         content_rating = content_rating.next_sibling if content_rating else content_rating
@@ -138,13 +144,16 @@ def get_tech_info(soup, dictionary, is_new_page):
         date_updated = soup.find("div", {"itemprop": "datePublished"})
         num_installs = soup.find("div", {"itemprop": "numDownloads"})
         current_version = soup.find("div", {"itemprop": "softwareVersion"})
+        current_version = current_version.string if current_version else current_version
+
         android_versions = soup.find("div", {"itemprop": "operatingSystems"})
+        android_versions = android_versions.string if android_versions else android_versions
         content_rating = soup.find("div", {"itemprop": "contentRating"})
 
     dictionary["last_update"] = get_date(date_updated.string.strip()) if date_updated else date_updated
     dictionary["num_installs"] = num_installs.string.strip() if num_installs else num_installs
-    dictionary["current_version"] = current_version.string.strip() if current_version else current_version
-    dictionary["android_version"] = android_versions.string.strip() if android_versions else android_versions
+    dictionary["current_version"] = current_version.strip() if current_version else current_version
+    dictionary["android_version"] = android_versions.strip() if android_versions else android_versions
     dictionary["content_rating"] = content_rating.string.strip() if content_rating else content_rating
 
     return dictionary
@@ -165,8 +174,9 @@ def get_dev_info(soup, dictionary, is_new_page):
 
     else:
         dev = soup.find("a", {"class": "document-subtitle primary"}).span if soup.find("a", {"class": "document-subtitle primary"}) else soup.find("a", {"class": "document-subtitle primary"})
-        dev_mail = soup.find(is_dev_email)
-        dev_address = soup.find("div", {"class": "content physical-address"})
+
+    dev_mail = soup.find(is_dev_email)
+    dev_address = soup.find("div", {"class": "content physical-address"})
 
     dictionary["dev_name"] = dev.string if dev else dev
     dictionary["dev_mail"] = dev_mail.string.replace("Email", "").strip() if dev_mail else dev_mail
@@ -180,9 +190,10 @@ def get_whats_new(soup, dictionary, is_new_page):
     if is_new_page:
         temp = soup.find_all("div", {"class": "DWPxHb"})
         list_news = []
-        if len(temp.size) > 1:
+        if len(temp) > 1:
             temp = temp[1] if temp else temp
             temp = temp.content if temp else temp
+            temp = temp.string if temp else temp
             if temp:
                 list_news.append(temp)
 
