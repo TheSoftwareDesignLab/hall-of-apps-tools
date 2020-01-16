@@ -65,8 +65,6 @@ def get_reviews(soup, dictionary, is_new_page):
 
 
 def get_date(string_date):
-    """Docstring
-    """
     date_time_obj = datetime.datetime.strptime(string_date, "%B %d, %Y")
 
     return date_time_obj
