@@ -1,7 +1,7 @@
 from decimal import *
 
 
-def get_apps(soup, class_content, dictionary, state):
+def get_apps(soup, class_content, dictionary, state, is_new_page):
 
     apps = []
 
@@ -9,6 +9,10 @@ def get_apps(soup, class_content, dictionary, state):
         apps = soup.find("div", {"class": class_content}).find_all("div", {"class": "card no-rationale square-cover apps small"})
 
     amount_apps = len(apps)
+
+    if is_new_page and amount_apps == 0:
+        amount_apps = None
+
     dictionary[f'amount_{state}_apps'] = amount_apps
     data_apps = []
 
@@ -39,16 +43,7 @@ def get_apps(soup, class_content, dictionary, state):
                     "app_retrieved_date_end": dictionary["retrieved_date_end"],
                     "category": dictionary["category"],
                     "country": dictionary["country"]
-                    #"_id": {}
                     }
-
-        #current_app["_id"]["id"] = id_extra_app
-        #current_app["_id"]["state"] = state
-        #current_app["_id"]["app_id"] = dictionary["_id"]["id"]
-        #current_app["_id"]["app_retrieved_date_start"] = dictionary["_id"]["retrieved_date_start"]
-        #current_app["_id"]["app_retrieved_date_end"] = dictionary["_id"]["retrieved_date_end"]
-        #current_app["_id"]["category"] = dictionary["_id"]["category"]
-        #current_app["_id"]["country"] = dictionary["_id"]["country"]
 
         data_apps.append(current_app)
 

@@ -2,9 +2,12 @@ from decimal import *
 import datetime
 
 
-def get_reviews(soup, dictionary):
+def get_reviews(soup, dictionary, is_new_page):
     reviews = soup.find_all("div", {"class": "single-review"})
     amount_reviews = len(reviews) if reviews else 0
+
+    if is_new_page and amount_reviews == 0:
+        amount_reviews = None
 
     dictionary["amount_reviews"] = amount_reviews
     data_reviews = []
@@ -41,19 +44,20 @@ def get_reviews(soup, dictionary):
         app_id = dictionary["id"]
 
         current_review = {
-                        "rating": float(round(Decimal(review_rating["aria-label"].split("stars")[0].replace("Rated", "").strip()), 3)) if review_rating else review_rating,
-                        "title": review_title,
-                        "author": author,
-                        "text": review_text,
-                        "date": date,
-                        "dev_name": dev_name,
-                        "dev_reply": dev_reply,
-                        "dev_reply_date": get_date(dev_date) if dev_date else dev_date,
-                        "app_id": app_id,
-                        "app_retrieved_date_start": dictionary["retrieved_date_start"],
-                        "app_retrieved_date_end": dictionary["retrieved_date_end"],
-                        "app_name": dictionary["name"]
-                        }
+            "rating": float(round(Decimal(review_rating["aria-label"].split("stars")[0].replace("Rated", "").strip()),
+                                  3)) if review_rating else review_rating,
+            "title": review_title,
+            "author": author,
+            "text": review_text,
+            "date": date,
+            "dev_name": dev_name,
+            "dev_reply": dev_reply,
+            "dev_reply_date": get_date(dev_date) if dev_date else dev_date,
+            "app_id": app_id,
+            "app_retrieved_date_start": dictionary["retrieved_date_start"],
+            "app_retrieved_date_end": dictionary["retrieved_date_end"],
+            "app_name": dictionary["name"]
+        }
 
         data_reviews.append(current_review)
 
