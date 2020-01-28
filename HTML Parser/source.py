@@ -6,7 +6,21 @@ import utils.reviews_info as ri
 import utils.extra_apps_info as eai
 
 ignore_folders = ["2017115-20171111%br%editorChoice%cc.pacer.androidapp.html",
-                  "appsRetrieved.json", "processed", "raw_html", "RESULTS", "testData", "toProcess"]
+                  "appsRetrieved.json", "processed", "raw_html", "RESULTS", "testData", "toProcess",
+                  "20180225-20180303",
+                  "20180304-20180310",
+                  "20180311-20180317",
+                  "20180318-20180324",
+                  "20180325-20180331",
+                  "20180401-20180407",
+                  "20180408-20180414",
+                  "20180415-20180421",
+                  "20180422-20180428",
+                  "20180429-20180505",
+                  "20180506-20180512",
+                  "20180513-20180519",
+                  "20180520-20180526",
+                  "20180527-20180602"]
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["mining"]
@@ -41,27 +55,27 @@ def main():
                 if page_format is not None:
                     is_new_page = True
 
-                dictionary = ai.get_basic_info(soup, file, dictionary, is_new_page)
-                dictionary = ai.get_tech_info(soup, dictionary, is_new_page)
-                dictionary = ai.get_rating(soup, dictionary, is_new_page)
-                dictionary = ai.get_whats_new(soup, dictionary, is_new_page)
-                dictionary = ai.get_dev_info(soup, dictionary, is_new_page)
+                #dictionary = ai.get_basic_info(soup, file, dictionary, is_new_page)
+                #dictionary = ai.get_tech_info(soup, dictionary, is_new_page)
+                #dictionary = ai.get_rating(soup, dictionary, is_new_page)
+                #dictionary = ai.get_whats_new(soup, dictionary, is_new_page)
+                #dictionary = ai.get_dev_info(soup, dictionary, is_new_page)
 
-                dictionary, data_reviews = ri.get_reviews(soup, dictionary, is_new_page)
+                dictionary, data_reviews = ri.get_reviews(soup, dictionary, is_new_page, file)
 
-                dictionary, data_similar = eai.get_apps(soup, \
-                                                        "cards expandable id-card-list", dictionary, "similar",
-                                                        is_new_page)
-                dictionary, data_more = eai.get_apps(soup, \
-                                                     "more-from-developer", dictionary, "more_from_developer",
-                                                     is_new_page)
+                #dictionary, data_similar = eai.get_apps(soup, \
+                #                                        "cards expandable id-card-list", dictionary, "similar",
+                #                                        is_new_page)
+                #dictionary, data_more = eai.get_apps(soup, \
+                #                                     "more-from-developer", dictionary, "more_from_developer",
+                #                                     is_new_page)
 
-                extra_apps = data_similar
-                extra_apps.extend(data_more)
+                #extra_apps = data_similar
+                #extra_apps.extend(data_more)
 
-                save_mongo("app", [dictionary])
+                #save_mongo("app", [dictionary])
                 save_mongo("review", data_reviews)
-                save_mongo("extra_app", extra_apps)
+                #save_mongo("extra_app", extra_apps)
 
                 print(f'WRITTEN {counter + 1} apps more')
 

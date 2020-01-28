@@ -2,12 +2,30 @@ from decimal import *
 import datetime
 
 
-def get_reviews(soup, dictionary, is_new_page):
+def get_reviews(soup, dictionary, is_new_page, file):
     reviews = soup.find_all("div", {"class": "single-review"})
     amount_reviews = len(reviews) if reviews else 0
 
     if is_new_page and amount_reviews == 0:
         amount_reviews = None
+
+    # "2017115-20171111%br%editorChoice%cc.pacer.androidapp.html"
+    file_info = file.split("%")
+    retrieved_date = file_info[0].split("-")
+    retrieved_date_start_file = retrieved_date[0]
+    retrieved_date_end_file = retrieved_date[1]
+    country = file_info[1]
+    category = file_info[2]
+    file_id = file_info[3].replace(".html", "")
+
+    retrieved_date_start = get_retrieved_date(retrieved_date_start_file) if retrieved_date_start_file else retrieved_date_start_file
+    retrieved_date_end = get_retrieved_date(retrieved_date_end_file) if retrieved_date_end_file else retrieved_date_end_file
+
+    dictionary["id"] = file_id
+    dictionary["retrieved_date_start"] = retrieved_date_start
+    dictionary["retrieved_date_end"] = retrieved_date_end
+    dictionary["category"] = category
+    dictionary["country"] = country
 
     dictionary["amount_reviews"] = amount_reviews
     data_reviews = []
@@ -56,7 +74,9 @@ def get_reviews(soup, dictionary, is_new_page):
             "app_id": app_id,
             "app_retrieved_date_start": dictionary["retrieved_date_start"],
             "app_retrieved_date_end": dictionary["retrieved_date_end"],
-            "app_name": dictionary["name"]
+            "app_name": dictionary["name"],
+            "category": dictionary["category"],
+            "country": dictionary["country"]
         }
 
         data_reviews.append(current_review)
@@ -68,3 +88,8 @@ def get_date(string_date):
     date_time_obj = datetime.datetime.strptime(string_date, "%B %d, %Y")
 
     return date_time_obj
+
+
+def get_retrieved_date(retrieved_date):
+
+    return datetime.datetime.strptime(retrieved_date, "%Y%m%d")
