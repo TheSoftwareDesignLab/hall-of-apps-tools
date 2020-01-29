@@ -1,6 +1,4 @@
 import pymongo
-import datetime
-from bson.tz_util import FixedOffset
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["mining"]
