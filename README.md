@@ -127,41 +127,41 @@ Select Input <select id="chartTypesAppxaxis"></select>
 | Atribute Name | Type| % Null Values | Predominant Values |
 | :-------------: | :----------: | :-----------: | :-----------: |
 | _id | Object | 0% | N/A |
-| amount_more_from_developer_apps | Numeric | 35.5% | 0 (~32.5%), 16 (~24%)
+| amount_more_from_developer_apps | Numeric | 35.5% | 0 (~30%), 16 (~24%)
 | amount_reviews | Numeric | 64.5% | 38 (~64%) |
 | amount_similar_apps | Numeric | 35.5% | 18 (~64%), 16 (~27%) |
 | android_version | String | 0.3% | "4.1 and up" (~21%), "4.0.3 and up" (~15%) |
-| category | String | 0% | "music_and_audio" (~) |
-| content_rating | String | 0% |  |
-| country | String | 0% |  |
-| currency | String | 0% |  |
-| current_version | String | 2.4% |  |
-| description | String | 0% |  |
-| dev_address | String | 54% |  |
-| dev_mail | String | 0% |  |
-| dev_name | String | 0% |  |
-| genre | Array | 0% |  |
-| has_specific_version | Bool | 0% |  |
-| has_whats_new | Bool | 0% |  |
-| id | String | 0% |  |
-| last_update | Date | 0% |  |
-| name | String | 0% |  |
-| num_installs | String | 0% |  |
-| price | Numeric | 0% |  |
-| price_usd | Numeric | 0% |  |
-| rating | Numeric | 1.7% |  |
-| rating_1 | Numeric | 23.8% |  |
-| rating_2 | Numeric | 23% |  |
-| rating_3 | Numeric | 22.4% |  |
-| rating_4 | Numeric | 21.9% |  |
-| rating_5 | Numeric | 21.5% |  |
-| required_version | String | 0% |  |
-| retrieved_date_end | Date | 0% |  |
-| retrieved_date_start | Date | 0% |  |
-| summary | String | 0% |  |
-| top | String | 0% |  |
-| url | String | 0% |  |
-| whats_new | Array | 0% |  |
+| category | String | 0% |  |
+| content_rating | String | 0% | "Everyone" (~46%), "USK: All ages" (~22%) |
+| country | String | 0% | "co" (~26%), "us" (~26%), "de" (~25%), "br" (~22%) |
+| currency | String | 0% | "COP" (~26%), "$" (~26%), "€" (~25%), "R\$" (~22%) |
+| current_version | String | 2.4% | "Varies with device" (~14%), "1.0" (~6%) |
+| description | String | 0% | N/A |
+| dev_address | String | 54% | N/A |
+| dev_mail | String | 0% | N/A |
+| dev_name | String | 0% | N/A |
+| genre | Array | 0% | N/A |
+| has_specific_version | Bool | 0% | false (~86%) |
+| has_whats_new | Bool | 0% | true (~64%) |
+| id | String | 0% | N/A |
+| last_update | Date | 0% | N/A |
+| name | String | 0% | N/A |
+| num_installs | String | 0% | "+1" (~35%) |
+| price | Numeric | 0% | N/A |
+| price_usd | Numeric | 0% | N/A |
+| rating | Numeric | 1.7% | 4.4 (~40%), 4 (~22%) |
+| rating_1 | Numeric | 23.8% | N/A |
+| rating_2 | Numeric | 23% | N/A |
+| rating_3 | Numeric | 22.4% | N/A |
+| rating_4 | Numeric | 21.9% | N/A |
+| rating_5 | Numeric | 21.5% | N/A |
+| required_version | String | 0% | "Ice CreamSandwich and up" (~30%), "Jelly Bean and up" (~25%) |
+| retrieved_date_end | Date | 0% | N/A |
+| retrieved_date_start | Date | 0% | N/A |
+| summary | String | 0% | N/A |
+| top | String | 0% | "topFree" (~57%), "topSelling" (~40%) |
+| url | String | 0% | N/A |
+| whats_new | Array | 0% | N/A |
 
 ### Review Collection Discoveries
 
