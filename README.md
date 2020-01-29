@@ -131,7 +131,7 @@ Select Input <select id="chartTypesAppxaxis"></select>
 | amount_reviews | Numeric | 64.5% | 38 (~64%) |
 | amount_similar_apps | Numeric | 35.5% | 18 (~64%), 16 (~27%) |
 | android_version | String | 0.3% | "4.1 and up" (~21%), "4.0.3 and up" (~15%) |
-| category | String | 0% |  |
+| category | String | 0% | N/A |
 | content_rating | String | 0% | "Everyone" (~46%), "USK: All ages" (~22%) |
 | country | String | 0% | "co" (~26%), "us" (~26%), "de" (~25%), "br" (~22%) |
 | currency | String | 0% | "COP" (~26%), "$" (~26%), "€" (~25%), "R\$" (~22%) |
