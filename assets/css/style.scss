@@ -1,0 +1,36 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+header ol li {
+    border-right: 0px solid #e0e0e0;
+    float: none;
+    width: auto;
+    height: auto;
+}
+
+header h1 {
+    text-align: center;
+}
+
+section p, li {
+    text-align: justify;
+}
+
+footer p {
+    margin: 0;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 2px; 
+    border: 0px;
+    font: 14px sans-serif;
+    background: white;
+    border-radius: 8px;
+    pointer-events: none;
+}
