@@ -1,6 +1,6 @@
 d3.csv("assets/data/mongo_app.csv").then(d => pieChart(d, "#chartTypesApp", 4, "country"));
 // d3.csv("database_types.csv").then(d => pieChart(d, "#chartTypesReview", 4, "country"));
-// d3.csv("database_types.csv").then(d => pieChart(d, "#chartTypesExtra", 4, "country"));
+d3.csv("assets/data/mongo_extra.csv").then(d => pieChart(d, "#chartTypesExtra", 4, "country"));
 
 /**
  * Function that creates a Stacked Bar Chart According to information stored in a 

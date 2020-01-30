@@ -43,7 +43,7 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 
 ### Database Structure
 
-![Non-relational database diagram.](/assets/imgs/structural/coming_soon.png)
+![Non-relational database diagram.](/assets/imgs/diagrams/database_diagram.PNG)
 
 <p align="justify">
   As shown in the image above, the database consists of three collections. The main collection is called <i><strong>app</strong></i> because it keeps characteristic information about the app and retrieval dates. However, each app could also have <i>reviews</i>, <i>similar apps</i>, and <i>more apps from the same developer</i>, thus, in order to prevent overloading the collection and to make easy to query information about reviews and extra apps, we created two new collections, <i><strong>review</strong></i> and <i><strong>extra app</strong></i>. 
@@ -63,7 +63,7 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 
 ### Links
 <p align="justify">
-  The tools that were used to extract, parse and visualize the collected data can be found in the following [GitHub Repository](https://github.com/TheSoftwareDesignLab/hall-of-apps-tools)
+  The tools that were used to extract, parse and visualize the collected data can be found in the following <a href="https://github.com/TheSoftwareDesignLab/hall-of-apps-tools">GitHub Repository</a>.
 </p>
 
 ## Metrics and Statistics
@@ -120,7 +120,7 @@ Select Input <select id="chartTypesAppxaxis"></select>
 </p>
 
 <p align="justify">
-  In addition to the above, the table below shows in detail the data types of each of the attributes of the collection, as well as the percentage of null values
+  In addition to the above, the table below shows the data types of each of the attributes of the collection, as well as the percentage of null values. It is important to clarify that this analysis was done with a sample of <strong>70000</strong> records from the collection.
 </p>
 
 
@@ -169,6 +169,43 @@ Select Input <select id="chartTypesReviewxaxis"></select>
 <svg id="chartTypesReview" width="500" height="450"></svg>
 
 ### Extra App Collection Discoveries
+<p align="justify">
+  This collection has <strong>YYY</strong> records and a total of <strong>14</strong> attributes. The following figure depicts the attributes data-type distribution.  
+</p>
 
 Select Input <select id="chartTypesExtraxaxis"></select>
 <svg id="chartTypesExtra" width="500" height="450"></svg>
+
+<p align="justify">
+  As the figure shows, the <i>String</i> data-type is predominant in this collection, folowed by <i>Date</i> attributes. In the same way, it's possible to evidence the same proportions when lookin at each individual country, with the exception of <strong><i>de</i></strong> which has a higher amount of <i>null</i> values.
+</p>
+
+<p align="justify">
+  In addition to the above, the table below shows the data types of each of the attributes of the collection, as well as the percentage of null values. It is important to clarify that this analysis was done with a sample of <strong>90000</strong> records from the collection.
+</p>
+
+
+| Atribute Name | Type| % Null Values |
+| :-------------: | :----------: | :-----------: | :-----------: |
+| _id | Object | 0% |
+| app_id | String | 0.2% |
+| app_name | String | 0% |
+| app_retrieved_date_end | Date | 0% |
+| app_retrieved_date_start | Date | 0% |
+| category | String | 0% | 
+| country | String | 0% | 
+| dev_name | String | 0% | 
+| id | String | 0% | 
+| name | String | 0% | 
+| price | String | 20.6% | 
+| rating | String | 1.7 | 
+| state | String | 0% | 
+| summary | String | 0% | 
+
+<p align="justify">
+  From the above, it's worth noting that the majority of the collection attributes are <i>unique</i> and, therefore, it wasn't possible to depict predominant values for those attributes. Nevertheless, some attributes did evidence predominant value such as:  
+</p>
+
+* The <strong>price</strong> attribute with a 90% predominance of the value "Free".
+* The <strong>rating</strong> attribute with a 50% predominance of the value "4.5", followed by the value "4.5" with 25%.
+* The <strong>state</strong> attribute with a 72% predominance of the value "similar", followed by the value "more_from_developer" with the remaining percentage.
