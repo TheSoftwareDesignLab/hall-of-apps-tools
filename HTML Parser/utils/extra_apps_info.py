@@ -2,6 +2,14 @@ from decimal import *
 import json
 import re
 
+currencies = {
+    "br": "R$",
+    "us": "$",
+    "de": "€",
+    "co": "COP",
+}
+
+
 def script_in_text(id_tag=False,key='ds:4'):
 
     def regex_f(tag):
@@ -15,6 +23,7 @@ def script_in_text(id_tag=False,key='ds:4'):
     function = regex_id if id_tag else regex_f
     
     return function
+
 
 def get_key_apps(soup):
 
@@ -67,6 +76,7 @@ def get_field_app(field, extra_app):
         response = None
     return response
 
+
 def get_new_extra_similar(soup, dictionary):
 
     key = get_key_apps(soup)
@@ -91,6 +101,7 @@ def get_new_extra_similar(soup, dictionary):
                 "dev_name": get_field_app('dev_name',app),
                 "price": "Free" if get_field_app('price',app) == 0 else get_field_app('price',app),
                 "currency":get_field_app('currency',app),
+                #"currency": currencies[dictionary["country"]],
                 "summary": get_field_app('summary',app),
                 "rating": get_field_app('rating',app),
                 "id": get_field_app('id',app),
@@ -113,6 +124,74 @@ def get_new_extra_similar(soup, dictionary):
 
     return data_apps
 
+
+def new_extra_app_more(soup, dictionary):
+
+    data_apps_more = []
+    more_apps = soup.find_all("a", {"aria-label": re.compile("Check out more content from ")})
+
+    if len(more_apps) > 1:
+        more_apps = more_apps[1]
+        parent1 = more_apps.parent if more_apps else more_apps
+        parent2 = parent1.parent if parent1 else parent1
+        sibling = parent2.next_sibling if parent2 else parent2
+        all_more = sibling.find_all("div", {"class": "WHE7ib mpg5gc"})
+
+        for more in all_more:
+            try:
+                app_id_temp = more.find("div", {"class": "b8cIId ReQCgd nnK0zc"})
+                app_id_temp = app_id_temp.a if app_id_temp else app_id_temp
+                app_id_temp = app_id_temp["href"] if app_id_temp and app_id_temp.has_attr("href") else app_id_temp
+                app_id = app_id_temp.split("id=")[1] if app_id_temp and len(app_id_temp.split("id=")) > 1 else None
+
+                app_name = more.find("div", {"class": "b8cIId ReQCgd nnK0zc"})
+                app_name = app_name.a if app_name else app_name
+                app_name = app_name.get_text() if app_name else app_name
+
+                app_dev = more.find("div", {"class": "b8cIId ReQCgd KoLSrc"})
+                app_dev = app_dev.a if app_dev else app_dev
+                app_dev = app_dev.div if app_dev else app_dev
+                app_dev = app_dev.string if app_dev else app_dev
+
+                app_price = more.find("span", {"class": "VfPpfd ZdBevf i5DZme"})
+                app_price = app_price.span if app_price else app_price
+                app_price = app_price.string if app_price else app_price
+
+                app_summary = more.find("div", {"class": "b8cIId f5NCO"})
+                app_summary = app_summary.a if app_summary else app_summary
+                app_summary = app_summary.get_text() if app_summary else app_summary
+
+                rating = more.find("div", {"class": "pf5lIe"})
+                rating = rating.div if rating else rating
+                rating = rating["aria-label"] if rating and rating.has_attr("aria-label") else rating
+                rating = rating.split(" ")[1] if rating and len(rating.split(" ")) > 1 else rating
+                rating = float(round(Decimal(rating), 3)) if rating else rating
+
+                current_app = {
+                    "name": app_name,
+                    "dev_name": app_dev,
+                    "price": app_price,
+                    "currency": currencies[dictionary["country"]],
+                    "summary": app_summary,
+                    "rating": rating,
+                    "id": app_id,
+                    "state": "more_from_developer",
+                    # data from app
+                    "app_id": dictionary["id"],
+                    "app_retrieved_date_start": dictionary["retrieved_date_start"],
+                    "app_retrieved_date_end": dictionary["retrieved_date_end"],
+                    "category": dictionary["category"],
+                    "country": dictionary["country"],
+                    "app_name": dictionary["name"],
+                }
+
+                data_apps_more.append(current_app)
+
+            except Exception as e:
+                print(e)
+                pass
+
+    return data_apps_more
 
 
 def get_apps(soup, class_content, dictionary, state, is_new_page):
@@ -162,7 +241,7 @@ def get_apps(soup, class_content, dictionary, state, is_new_page):
         data_apps.append(current_app)
 
     if is_new_page:
-        new_extra_app = get_new_extra_similar(soup, dictionary) if state == 'similar' else [] 
+        new_extra_app = get_new_extra_similar(soup, dictionary) if state == 'similar' else new_extra_app_more(soup, dictionary)
 
         dictionary[f'amount_{state}_apps'] = dictionary[f'amount_{state}_apps']  + len(new_extra_app)
         data_apps.extend(new_extra_app)
