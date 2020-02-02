@@ -69,9 +69,9 @@ def main(path_o:str):
                 extra_apps = data_similar
                 extra_apps.extend(data_more)
 
-                save_mongo("app2", [dictionary])
-                save_mongo("reviews2", data_reviews)
-                save_mongo("extra_app2", extra_apps)
+                save_mongo("app", [dictionary])
+                save_mongo("reviews", data_reviews)
+                save_mongo("extra_app", extra_apps)
 
                 print(f'WRITTEN {counter + 1} apps more')
 

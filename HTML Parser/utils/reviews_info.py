@@ -2,6 +2,7 @@ import datetime
 from decimal import *
 import json
 import re
+import pdb
 
 
 def get_date(string_date):
@@ -52,7 +53,8 @@ def get_field(field, review):
 
         elif field=='dateReply':
             response=review[7][2][0] 
-    except:
+    except Exception as e:
+        print(field,)
         response = None
     return response
 
@@ -117,7 +119,7 @@ def get_new_reviews(soup, dictionary):
                 data_reviews.append(current_review)
         
         except Exception  as e:
-            print(e)
+            print("no reviews")
             pass
 
     return data_reviews

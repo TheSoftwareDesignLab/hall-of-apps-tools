@@ -1,6 +1,8 @@
 from decimal import *
 import json
 import re
+import pdb
+
 
 currencies = {
     "br": "R$",
@@ -71,8 +73,7 @@ def get_field_app(field, extra_app):
         elif field=='currency':
             response= extra_app[7][0][3][2][1][0][1]
     except Exception as e:
-        print(e, field)
-        print(extra_app)
+        print(field,)
         response = None
     return response
 
@@ -94,7 +95,7 @@ def get_new_extra_similar(soup, dictionary):
         
 
         try:
-            for app in info_extra_apps[1][1][0][0][0][0]:
+            for app in info_extra_apps[1][1][0][0][0]:
                 current_app = {
                 # info from extra app
                 "name": get_field_app('name',app),
