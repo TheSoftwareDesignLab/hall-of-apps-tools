@@ -1,4 +1,115 @@
 from decimal import *
+import json
+import re
+
+def script_in_text(id_tag=False,key='ds:4'):
+
+    def regex_f(tag):
+
+        return tag.name == 'script' and key in tag.get_text() and 'return' in tag.get_text() 
+
+    def regex_id(tag):
+
+        return tag.name == 'script' and '1.39809457E8' in tag.get_text() 
+
+    function = regex_id if id_tag else regex_f
+    
+    return function
+
+def get_key_apps(soup, type_extra='similar'):
+
+    script = soup.find_all(script_in_text(True))
+    txt_id_apps = script[0].get_text()
+    key = None
+
+    id_tag= '1.39809457E8' if type_extra == 'similar' else '1.62435799E8' #  change this for more developers
+
+    try:
+        line_key = re.search(f'.*{id_tag}.*\n', txt_id_apps).group(0)
+
+        if 'ds:4' in line_key and type_extra == 'similar':
+            key=  'ds:4'
+        elif 'ds:5' in line_key and type_extra == 'similar':
+            key = 'ds:5'
+
+    except Exception as e:
+        pass
+
+    return key
+
+def get_field_app(field, extra_app):
+
+
+    try:
+        if field=='name':
+            response=extra_app[2]
+
+        elif field=='dev_name':
+            response=extra_app[4][0][0][0]
+
+        elif field=='summary':
+            response=extra_app[4][1][1][1][1]
+
+        elif field=='rating':
+            response=float(extra_app[6][0][2][1][0])
+
+        elif field=='id':
+            response= extra_app[7][0][3][3][0]            
+
+        elif field=='price':
+            response= extra_app[7][0][3][2][1][0][0]
+
+        elif field=='currency':
+            response= extra_app[7][0][3][2][1][0][1]
+    except Exception as e:
+        print(e, field)
+        print(extra_app)
+        response = None
+    return response
+
+def get_new_extra_similar(soup, dictionary):
+
+    key = get_key_apps(soup)
+
+    #info apps
+    script = soup.find_all(script_in_text(False,key)) 
+    text_script = script[0].get_text() # text for script tag
+    info_extra_apps = text_script[text_script.find("return")+7:text_script.find("}});")] # finds return and locates array apps
+    info_extra_apps = json.loads(info_extra_apps)
+    
+
+    data_apps = []
+
+    try:
+        for app in info_extra_apps[1][1][0][0][0][0]:
+            current_app = {
+            # info from extra app
+            "name": get_field_app('name',app),
+            "dev_name": get_field_app('dev_name',app),
+            "price": "Free" if get_field_app('price',app) == 0 else get_field_app('price',app),
+            "currency":get_field_app('currency',app),
+            "summary": get_field_app('summary',app),
+            "rating": get_field_app('rating',app),
+            "id": get_field_app('id',app),
+            #general extra app
+            "state": 'similar',
+            #data from app
+            "app_id": dictionary["id"],
+            "app_retrieved_date_start": dictionary["retrieved_date_start"],
+            "app_retrieved_date_end": dictionary["retrieved_date_end"],
+            "category": dictionary["category"],
+            "country": dictionary["country"],            
+            "app_name": dictionary["name"],
+            }
+
+            data_apps.append(current_app)
+
+    except Exception  as e:
+        print(e)
+        pass
+
+    return data_apps
+
 
 
 def get_apps(soup, class_content, dictionary, state, is_new_page):
@@ -11,7 +122,7 @@ def get_apps(soup, class_content, dictionary, state, is_new_page):
     amount_apps = len(apps)
 
     if is_new_page and amount_apps == 0:
-        amount_apps = None
+        amount_apps = 0
 
     dictionary[f'amount_{state}_apps'] = amount_apps
     data_apps = []
@@ -46,5 +157,10 @@ def get_apps(soup, class_content, dictionary, state, is_new_page):
                     }
 
         data_apps.append(current_app)
+
+    if is_new_page:
+        new_extra_app = get_new_extra_similar(soup, dictionary)
+        dictionary[f'amount_{state}_apps'] = dictionary[f'amount_{state}_apps']  + len(new_extra_app)
+        data_apps.extend(new_extra_app)
 
     return dictionary, data_apps

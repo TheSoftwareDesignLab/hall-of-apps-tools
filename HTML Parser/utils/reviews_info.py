@@ -70,7 +70,8 @@ def get_key_reviews(soup):
         elif 'ds:14' in line_key:
             key = 'ds:14'
 
-    except:
+    except Exception  as e:
+        print(e)
         pass
 
     return key
@@ -87,28 +88,32 @@ def get_new_reviews(soup, dictionary):
 
     data_reviews = []
 
-    for review in info_reviews[0]:
+    try:
+        for review in info_reviews[0]:
 
-        current_review = {
-            "rating": get_field('rating',review),
-            "author": get_field('author',review),
-            "text": get_field('review_text',review),
-            "date": get_field('date',review),
-            #developer name that answers
-            "dev_name": get_field('dev_name',review),
-            "dev_reply": get_field('dev_reply',review),
-            "dev_reply_date": get_field('dateReply',review),
-            #data from app
-            "app_id": dictionary["id"],
-            "app_retrieved_date_start": dictionary["retrieved_date_start"],
-            "app_retrieved_date_end": dictionary["retrieved_date_end"],
-            "app_name": dictionary["name"],
-            "category": dictionary["category"],
-            "country": dictionary["country"]
-        }
+            current_review = {
+                "rating": get_field('rating',review),
+                "author": get_field('author',review),
+                "text": get_field('review_text',review),
+                "date": get_field('date',review),
+                #developer name that answers
+                "dev_name": get_field('dev_name',review),
+                "dev_reply": get_field('dev_reply',review),
+                "dev_reply_date": get_field('dateReply',review),
+                #data from app
+                "app_id": dictionary["id"],
+                "app_retrieved_date_start": dictionary["retrieved_date_start"],
+                "app_retrieved_date_end": dictionary["retrieved_date_end"],
+                "app_name": dictionary["name"],
+                "category": dictionary["category"],
+                "country": dictionary["country"]
+            }
 
-        data_reviews.append(current_review)
-
+            data_reviews.append(current_review)
+    
+    except Exception  as e:
+        print(e)
+        pass
 
     return data_reviews
 

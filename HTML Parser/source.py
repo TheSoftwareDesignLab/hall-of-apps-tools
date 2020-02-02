@@ -9,9 +9,9 @@ import sys
 ignore_folders = ["2017115-20171111%br%editorChoice%cc.pacer.androidapp.html",
                   "appsRetrieved.json", "processed", "raw_html", "RESULTS", "testData", "toProcess",
                   "20171105-20171111", "20171112-20171118", "20171119-20171125","20171126-20171202","20171126-20171202",
-                  "20171210-20171216","20171217-20171223","20171224-20171230","20171231-201816","20180107-20180113",
-                  "20180114-20180120","20180121-20180127","20180128-20180203","20180204-20180210","20180211-20180217",
-                  "20180218-20180224",
+                  "20171203-20171209","20171210-20171216","20171217-20171223","20171224-20171230","20171231-201816",
+                  "20180107-20180113","20180114-20180120","20180121-20180127","20180128-20180203","20180204-20180210",
+                  "20180211-20180217", "20180218-20180224",
                   #"20180225-20180303", "20180304-20180310","20180311-20180317","20180318-20180324","20180325-20180331",
                   #"20180401-20180407","20180408-20180414","20180415-20180421","20180422-20180428","20180429-20180505",
                   #"20180506-20180512","20180513-20180519","20180520-20180526","20180527-20180602"
@@ -56,21 +56,22 @@ def main(path_o:str):
                 dictionary = ai.get_whats_new(soup, dictionary, is_new_page)
                 dictionary = ai.get_dev_info(soup, dictionary, is_new_page)
 
+
                 dictionary, data_reviews = ri.get_reviews(soup, dictionary, is_new_page, file)
 
-                #dictionary, data_similar = eai.get_apps(soup, \
-                #                                        "cards expandable id-card-list", dictionary, "similar",
-                #                                        is_new_page)
-                #dictionary, data_more = eai.get_apps(soup, \
-                #                                     "more-from-developer", dictionary, "more_from_developer",
-                #                                     is_new_page)
+                dictionary, data_similar = eai.get_apps(soup, \
+                                                        "cards expandable id-card-list", dictionary, "similar",
+                                                        is_new_page)
+                dictionary, data_more = eai.get_apps(soup, \
+                                                     "more-from-developer", dictionary, "more_from_developer",
+                                                     is_new_page)
 
-                #extra_apps = data_similar
-                #extra_apps.extend(data_more)
+                extra_apps = data_similar
+                extra_apps.extend(data_more)
 
-                #save_mongo("app", [dictionary])
+                save_mongo("app2", [dictionary])
                 save_mongo("reviews2", data_reviews)
-                #save_mongo("extra_app", extra_apps)
+                save_mongo("extra_app2", extra_apps)
 
                 print(f'WRITTEN {counter + 1} apps more')
 
