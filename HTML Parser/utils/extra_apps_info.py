@@ -16,20 +16,20 @@ def script_in_text(id_tag=False,key='ds:4'):
     
     return function
 
-def get_key_apps(soup, type_extra='similar'):
+def get_key_apps(soup):
 
     script = soup.find_all(script_in_text(True))
     txt_id_apps = script[0].get_text()
     key = None
 
-    id_tag= '1.39809457E8' if type_extra == 'similar' else '1.62435799E8' #  change this for more developers
+    id_tag= '1.39809457E8'  #  change this for more developers
 
     try:
         line_key = re.search(f'.*{id_tag}.*\n', txt_id_apps).group(0)
 
-        if 'ds:4' in line_key and type_extra == 'similar':
+        if 'ds:4' in line_key :
             key=  'ds:4'
-        elif 'ds:5' in line_key and type_extra == 'similar':
+        elif 'ds:5' in line_key :
             key = 'ds:5'
 
     except Exception as e:
@@ -163,6 +163,7 @@ def get_apps(soup, class_content, dictionary, state, is_new_page):
 
     if is_new_page:
         new_extra_app = get_new_extra_similar(soup, dictionary) if state == 'similar' else [] 
+
         dictionary[f'amount_{state}_apps'] = dictionary[f'amount_{state}_apps']  + len(new_extra_app)
         data_apps.extend(new_extra_app)
 
