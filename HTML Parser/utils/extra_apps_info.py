@@ -71,42 +71,45 @@ def get_new_extra_similar(soup, dictionary):
 
     key = get_key_apps(soup)
 
-    #info apps
-    script = soup.find_all(script_in_text(False,key)) 
-    text_script = script[0].get_text() # text for script tag
-    info_extra_apps = text_script[text_script.find("return")+7:text_script.find("}});")] # finds return and locates array apps
-    info_extra_apps = json.loads(info_extra_apps)
-    
-
     data_apps = []
 
-    try:
-        for app in info_extra_apps[1][1][0][0][0][0]:
-            current_app = {
-            # info from extra app
-            "name": get_field_app('name',app),
-            "dev_name": get_field_app('dev_name',app),
-            "price": "Free" if get_field_app('price',app) == 0 else get_field_app('price',app),
-            "currency":get_field_app('currency',app),
-            "summary": get_field_app('summary',app),
-            "rating": get_field_app('rating',app),
-            "id": get_field_app('id',app),
-            #general extra app
-            "state": 'similar',
-            #data from app
-            "app_id": dictionary["id"],
-            "app_retrieved_date_start": dictionary["retrieved_date_start"],
-            "app_retrieved_date_end": dictionary["retrieved_date_end"],
-            "category": dictionary["category"],
-            "country": dictionary["country"],            
-            "app_name": dictionary["name"],
-            }
 
-            data_apps.append(current_app)
+    if key is not None:
 
-    except Exception  as e:
-        print(e)
-        pass
+        #info apps
+        script = soup.find_all(script_in_text(False,key)) 
+        text_script = script[0].get_text() # text for script tag
+        info_extra_apps = text_script[text_script.find("return")+7:text_script.find("}});")] # finds return and locates array apps
+        info_extra_apps = json.loads(info_extra_apps)
+        
+
+        try:
+            for app in info_extra_apps[1][1][0][0][0][0]:
+                current_app = {
+                # info from extra app
+                "name": get_field_app('name',app),
+                "dev_name": get_field_app('dev_name',app),
+                "price": "Free" if get_field_app('price',app) == 0 else get_field_app('price',app),
+                "currency":get_field_app('currency',app),
+                "summary": get_field_app('summary',app),
+                "rating": get_field_app('rating',app),
+                "id": get_field_app('id',app),
+                #general extra app
+                "state": 'similar',
+                #data from app
+                "app_id": dictionary["id"],
+                "app_retrieved_date_start": dictionary["retrieved_date_start"],
+                "app_retrieved_date_end": dictionary["retrieved_date_end"],
+                "category": dictionary["category"],
+                "country": dictionary["country"],            
+                "app_name": dictionary["name"],
+                }
+
+                data_apps.append(current_app)
+
+        except Exception  as e:
+            print(e)
+            pass
 
     return data_apps
 
