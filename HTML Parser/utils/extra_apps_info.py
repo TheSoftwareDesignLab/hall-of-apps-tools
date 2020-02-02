@@ -162,7 +162,7 @@ def get_apps(soup, class_content, dictionary, state, is_new_page):
         data_apps.append(current_app)
 
     if is_new_page:
-        new_extra_app = get_new_extra_similar(soup, dictionary)
+        new_extra_app = get_new_extra_similar(soup, dictionary) if state == 'similar' else [] 
         dictionary[f'amount_{state}_apps'] = dictionary[f'amount_{state}_apps']  + len(new_extra_app)
         data_apps.extend(new_extra_app)
 
