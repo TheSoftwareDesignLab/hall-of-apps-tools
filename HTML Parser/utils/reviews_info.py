@@ -80,40 +80,45 @@ def get_key_reviews(soup):
 def get_new_reviews(soup, dictionary):
 
     key = get_key_reviews(soup)
-    # info reviews
-    script = soup.find_all(script_in_text(False,key)) #-------------------------------------------------missing key
-    text_script = script[0].get_text() # text for script tag
-    info_reviews = text_script[text_script.find("return")+7:text_script.find("}});")] # finds return and locates array reviews
-    info_reviews = json.loads(info_reviews)
 
     data_reviews = []
 
-    try:
-        for review in info_reviews[0]:
 
-            current_review = {
-                "rating": get_field('rating',review),
-                "author": get_field('author',review),
-                "text": get_field('review_text',review),
-                "date": get_field('date',review),
-                #developer name that answers
-                "dev_name": get_field('dev_name',review),
-                "dev_reply": get_field('dev_reply',review),
-                "dev_reply_date": get_field('dateReply',review),
-                #data from app
-                "app_id": dictionary["id"],
-                "app_retrieved_date_start": dictionary["retrieved_date_start"],
-                "app_retrieved_date_end": dictionary["retrieved_date_end"],
-                "app_name": dictionary["name"],
-                "category": dictionary["category"],
-                "country": dictionary["country"]
-            }
+    if key is not None:
 
-            data_reviews.append(current_review)
-    
-    except Exception  as e:
-        print(e)
-        pass
+        # info reviews
+        script = soup.find_all(script_in_text(False,key)) #-------------------------------------------------missing key
+        text_script = script[0].get_text() # text for script tag
+        info_reviews = text_script[text_script.find("return")+7:text_script.find("}});")] # finds return and locates array reviews
+        info_reviews = json.loads(info_reviews)
+
+
+        try:
+            for review in info_reviews[0]:
+
+                current_review = {
+                    "rating": get_field('rating',review),
+                    "author": get_field('author',review),
+                    "text": get_field('review_text',review),
+                    "date": get_field('date',review),
+                    #developer name that answers
+                    "dev_name": get_field('dev_name',review),
+                    "dev_reply": get_field('dev_reply',review),
+                    "dev_reply_date": get_field('dateReply',review),
+                    #data from app
+                    "app_id": dictionary["id"],
+                    "app_retrieved_date_start": dictionary["retrieved_date_start"],
+                    "app_retrieved_date_end": dictionary["retrieved_date_end"],
+                    "app_name": dictionary["name"],
+                    "category": dictionary["category"],
+                    "country": dictionary["country"]
+                }
+
+                data_reviews.append(current_review)
+        
+        except Exception  as e:
+            print(e)
+            pass
 
     return data_reviews
 
