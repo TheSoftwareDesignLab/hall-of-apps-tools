@@ -1,4 +1,6 @@
 
+The amount of Android apps available for download is constantly increasing, exerting a continuous pressure over developers to publish outstanding apps. Google Play (GP) is the default distribution channel for Android apps, which provides mobile app users  with metrics to select between apps to be installed such as rating, amount of downloads, previous users comments, etc. In addition to those metrics, GP presents a set of top charts to highlight the outstanding apps in different categories. Both metrics and top app charts help developers to identify whether their development decisions are well valued by the community. Therefore, app presence in these top charts must be studied to understand the features of top-apps. In this paper we present **Hall-of-Apps**, a dataset containing top charts' apps metadata extracted (weekly) from GP during 30 weeks. The data is presented as (i) raw HTML files, (ii) a mongo database with all the information contained in app's HTML files (eg. app description, category, general rating, etc.), and (iii) a set of data visualizations built with the D3.js framework. A first characterization of the data along with the urls to retrieve it can be found in here, our online appendix.
+
 ## Publications
 <p align="justify">
 Coming Soon!
@@ -28,17 +30,22 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 
 #### Dicoveries
 
-* After parsing the files, we discovered that the HTML format from weeks 17 to 30, changed. Because of that, several records had null values because its content were stored in different tags. Additionally, the information related to  <i>reviews</i>, <i>developer replies</i>, <i>similar apps</i>, and <i>more apps from developer</i> ended up being obfuscated in the new format and, as a result, <strong>those 14 weeks don't have that information</strong>.
-* As well, some categorical values changed, such as number of installations and android versions, which had more than 50 different categories. Because of that, we made the desitionto create new categories to homogenize the data and decrease the amount of categories.
+* After parsing the files, we discovered that the HTML format from weeks 17 to 30, changed, thus, it was necessary to search for the new tags and adapt the parser to recognize when the file had old or new format.
+
+  * Regarding the apps metadata, the new format included different categorical values. In consequence, the amount of categories of attributes such as number of installations and android versions, increased. Because of that, we created new categories to homogenize the data and decrease the amount of categories.
+
+  * The information related to the apps **reviews** and **similar apps information** was not stored in HTML tags but in JS arrays. In consequence, it was imperative to recognize the position of each attribute inside the array and adapt the parser to extract this information. Besides, when performing this analysis, we found reviews' date was written in milliseconds, thus, we didn't change it to date because time zone could be different from the original source. 
+
 * Depending of the country, each app had different currency, which makes the price comparrison infeasible. Thus, we calculated the price in dollars and added a new column with the calculated price.
+
 
 ## Dataset: Hall-of-Apps
 <p align="justify">
-  The resulting dataset is stored with two main components. The first one, which contains the raw HTML files of over 30 weeks, stores those files by week and grouped by month. Each file has a taxonomy to identify the week date in which the apps were extracted, app id, country, top and category where it belongs.
+  The resulting dataset is composed of two storage mechanisms. The first one, which contains the raw HTML files of over 30 weeks, stores those files by week and grouped by month. Each file has a taxonomy to identify the week date in which the apps were extracted, app id, country, top and category where it belongs.
 </p>
 
 <p align="justify">
-  The second component, contains the information extracted from the HTML files via the <i>developed parser</i>. That processed information was then used to populate a non-relational database, in this case, a MongoDB. We decided to use a non relational database due to the huge amount of raw files we had and taking into account not all apps contain the same information.
+  The second component, contains the information extracted from the HTML files via the <i>developed parser</i>. That processed information was then used to populate a non-relational database, in this case, a MongoDB. We decided to use a non-relational database due to the huge amount of raw files we had and taking into account not all apps contain the same information.
 </p>
 
 ### Database Structure
@@ -52,6 +59,10 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 
 <p align="justify">
   <i><strong>Review</strong></i> has information about the user who wrote the review, rating, date and, if the developer wrote a response, it also has the text and date. On the other hand, <i><strong>extra app</strong></i> has information about similar apps and more from developer. To distinguish the group where it belongs, each document has an <i>state</i> attribute which indicates if the app  is a similar app or more from developer app.
+</p>
+
+<p align="justify">
+  Additionally, since an app could appear in different countries, multiple weeks, or even in different tops, we defined primary and foreign keys composed by: <i>retrieved date start and end</i>, <i>app id</i>, <i>category</i> and <i>country</i>. In addition, this was done to keep a relation between <i><strong>app</strong></i>, <i><strong>review</strong></i> and <i><strong>extra app</strong></i>.
 </p>
 
 ### Visualizations Scripts
@@ -69,7 +80,25 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 
 ## Metrics and Statistics
 <p align="justify">
-  As we explained previously, our dataset is composed of to components: The first one contains raw HTML files stored week by week over 30 weeks, and the second one is a non-relational database with all the processed information. The following figure depicts the amount of apps metadata extracted from the Google Play Store, grouped by month and subdividing it by country:
+  We have collected our dataset from the GP website, checking the first 100 apps in the top free, top selling and the editor choice. Each app has a summary, description, rating, amount of stars, reviews, genre, price, last update, version, required android versions, developer, similar apps, more apps from developer, etc.
+</p>
+
+<p align="justify">
+  As we explained previously, our dataset is composed of two storage mechanisms: The first one contains raw HTML files stored week by week over 30 weeks. The following table shows the number of extracted HTML files by month.
+</p><br/>
+
+| Year  | Month | # Extracted Files|
+| :-------------: | :----------: | :----------: |
+| 2017 | November | 87700 |
+| 2017 | December | 111989 |
+| 2018 | January | 90154 |
+| 2018 | February | 89286 |
+| 2018 | March | 89545 |
+| 2018 | April | 115459 |
+| 2018 | May | 89908 |
+
+<p align="justify">
+  On the other hand, the second one is a non-relational database with all the processed information. The following figure depicts the amount of apps metadata extracted from the Google Play Store, grouped by month and subdividing it by country:
 </p><br/>
 
 <input type="checkbox" id="chartCountriessort">	Toggle sort 
