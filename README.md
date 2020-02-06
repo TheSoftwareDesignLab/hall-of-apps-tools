@@ -54,8 +54,9 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 
 ### Database Structure
 <p align="sutify" style="text-align: center;">
-  <img src="/assets/imgs/diagrams/database_diagram.PNG" alt="Non-relational database diagram."/>
+  <img src="assets/imgs/diagrams/database_diagram.PNG" alt="Non-relational database diagram."/>
 </p>
+
 
 <p align="justify">
   As shown in the image above, the database consists of three collections. The main collection is called <i><strong>app</strong></i> because it keeps characteristic information about the app and retrieval dates. However, each app could also have <i>reviews</i>, <i>similar apps</i>, and <i>more apps from the same developer</i>, thus, in order to prevent overloading the collection and to make easy to query information about reviews and extra apps, we created two new collections, <i><strong>review</strong></i> and <i><strong>extra app</strong></i>. 
