@@ -45,7 +45,7 @@
         <h3 style="margin-bottom: 7px">Table of contents</h3>
         <ol class="toc">
           {% for entry in site.table_contents %}
-            <li><a href="#{{entry | downcase }}">{{entry}}</a></li>      
+            <li><a href="#{{entry | downcase | | replace: ' ', '-' }} }}">{{entry}}</a></li>      
           {% endfor %}
         </ol>
         {% endif %}

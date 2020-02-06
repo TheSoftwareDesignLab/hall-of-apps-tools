@@ -1,10 +1,10 @@
 title: "Hall-of-Apps: The Top Android Apps Metadata Archive"
 table_contents:
   - Publications
+  - Links
   - Technologies
-  - Parser
-  - Database
-  - Metrics
+  - Dataset
+  - Metrics and Statistics
 
 logo1: /assets/imgs/structural/andes.png
 tsdllogo: /assets/imgs/structural/tsdl.png

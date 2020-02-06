@@ -7,7 +7,7 @@ Coming Soon!
 </p>
 
 ## Links
-* The tools that were used to extract, parse and visualize the collected data can be found in the following (Github Repository (https://github.com/TheSoftwareDesignLab/hall-of-apps-tools))[https://github.com/TheSoftwareDesignLab/hall-of-apps-tools].
+* The tools that were used to extract, parse and visualize the collected data can be found in the following [Github Repository (https://github.com/TheSoftwareDesignLab/hall-of-apps-tools)](https://github.com/TheSoftwareDesignLab/hall-of-apps-tools).
 * 
 
 ## Technologies
@@ -43,7 +43,7 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 * Depending of the country, each app had different currency, which makes the price comparrison infeasible. Thus, we calculated the price in dollars and added a new column with the calculated price.
 
 
-## Dataset: Hall-of-Apps
+## Dataset
 <p align="justify">
   The resulting dataset is composed of two storage mechanisms. The first one, which contains the raw HTML files of over 30 weeks, stores those files by week and grouped by month. Each file has a taxonomy to identify the week date in which the apps were extracted, app id, country, top and category where it belongs.
 </p>
