@@ -50,7 +50,7 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 
 ### Database Structure
 <p align="sutify" style="text-align: center;">
-  <img src="assets/imgs/diagrams/database_diagram.PNG" alt="Non-relational database diagram."/>
+  <img src="assets/imgs/diagrams/database_diagram.jpg" alt="Non-relational database diagram."/>
 </p>
 
 
