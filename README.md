@@ -15,8 +15,7 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 
 ### Google Play Scrapper
 <p align="justify">
-  To achieve the first part, we used a scraper written in <strong>BlaBlaBla</strong> which generated HTMLs files with the metadata of apps released in the Google Play Store.
-  <!--TODO: esperar a que la sección del scraper esté lista para mencionar las tecnologías y también las horas y días a las que se ejecutaba-->  
+  To achieve the first part, we used a scraper written with <strong>NodeJS scripts </strong>: The first script did the extraction of the list of apps in all the categories' top chart, while the second one was in charge of going through the aforementioned list with the purpose of extracting the associated HTML file for each element of the list.
 </p>
 
 ### HTML Parser
@@ -28,11 +27,11 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
   The parser is written in <strong>Python</strong> using the library <i>Beautiful Soup</i> to search tags and extract its content, in order to store it in a a non-relational database.
 </p>
 
-#### Dicoveries
+#### Important Findings
 
 * After parsing the files, we discovered that the HTML format from weeks 17 to 30, changed, thus, it was necessary to search for the new tags and adapt the parser to recognize when the file had old or new format.
 
-  * Regarding the apps metadata, the new format included different categorical values. In consequence, the amount of categories of attributes such as number of installations and android versions, increased. Because of that, we created new categories to homogenize the data and decrease the amount of categories.
+  * Regarding the apps metadata, the new format included different categorical values. In consequence, the amount of categories of fields such as number of installations and android versions, increased. Because of that, we created new categories to homogenize the data and decrease the amount of categories.
 
   * The information related to the apps **reviews** and **similar apps information** was not stored in HTML tags but in JS arrays. In consequence, it was imperative to recognize the position of each field inside the array and adapt the parser to extract this information. Besides, when performing this analysis, we found reviews' date was written in milliseconds, thus, we didn't change it to date because time zone could be different from the original source. 
 
@@ -106,7 +105,7 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
   </small>
 </p><br/>
 
-### General Discoveries
+### General Findings
 <p align="justify">
   Furthermore, it's worth noting that we extracted the best apps of the Google Play Store, thus, our non-relational database contains the <i>top free</i> and <i>top selling</i> apps for each category, as well as the <i>editors choice</i> in each country:
 </p><br/>
@@ -174,18 +173,18 @@ Select Input <select id="chartCustomCatxaxis"></select>
 
 ### App Collection Discoveries
 <p align="justify">
-  This collection has <strong>YYY</strong> records and a total of <strong>36</strong> attributes. The following figure depicts the attributes data-type distribution.  
+  This collection has <strong>YYY</strong> records and a total of <strong>36</strong> fields. The following figure depicts the fields data-type distribution.  
 </p>
 
 Select Input <select id="chartTypesAppxaxis"></select>
 <svg id="chartTypesApp" width="500" height="450"></svg>
 
 <p align="justify">
-  As the figure shows, the <i>String</i> data-type is predominant in this collection, folowed by <i>Numeric</i> attributes. In the same way, it's possible to evidence the same proportions when lookin at each individual country.
+  As the figure shows, the <i>String</i> data-type is predominant in this collection, folowed by <i>Numeric</i> fields. In the same way, it's possible to evidence the same proportions when lookin at each individual country.
 </p>
 
 <p align="justify">
-  In addition to the above, the table below shows the data types of each of the attributes of the collection, as well as the percentage of null values. It is important to clarify that this analysis was done with a sample of <strong>70000</strong> records from the collection.
+  In addition to the above, the table below shows the data types of each of the fields of the collection, as well as the percentage of null values. It is important to clarify that this analysis was done with a sample of <strong>70000</strong> records from the collection.
 </p>
 
 
@@ -235,18 +234,18 @@ Select Input <select id="chartTypesReviewxaxis"></select>
 
 ### Extra App Collection Discoveries
 <p align="justify">
-  This collection has <strong>YYY</strong> records and a total of <strong>14</strong> attributes. The following figure depicts the attributes data-type distribution.  
+  This collection has <strong>YYY</strong> records and a total of <strong>14</strong> fields. The following figure depicts the fields data-type distribution.  
 </p>
 
 Select Input <select id="chartTypesExtraxaxis"></select>
 <svg id="chartTypesExtra" width="500" height="450"></svg>
 
 <p align="justify">
-  As the figure shows, the <i>String</i> data-type is predominant in this collection, folowed by <i>Date</i> attributes. In the same way, it's possible to evidence the same proportions when lookin at each individual country, with the exception of <strong><i>de</i></strong> which has a higher amount of <i>null</i> values.
+  As the figure shows, the <i>String</i> data-type is predominant in this collection, folowed by <i>Date</i> fields. In the same way, it's possible to evidence the same proportions when lookin at each individual country, with the exception of <strong><i>de</i></strong> which has a higher amount of <i>null</i> values.
 </p>
 
 <p align="justify">
-  In addition to the above, the table below shows the data types of each of the attributes of the collection, as well as the percentage of null values. It is important to clarify that this analysis was done with a sample of <strong>90000</strong> records from the collection.
+  In addition to the above, the table below shows the data types of each of the fields of the collection, as well as the percentage of null values. It is important to clarify that this analysis was done with a sample of <strong>90000</strong> records from the collection.
 </p>
 
 
@@ -268,7 +267,7 @@ Select Input <select id="chartTypesExtraxaxis"></select>
 | summary | String | 0% | 
 
 <p align="justify">
-  From the above, it's worth noting that the majority of the collection attributes are <i>unique</i> and, therefore, it wasn't possible to depict predominant values for those attributes. Nevertheless, some attributes did evidence predominant value such as:  
+  From the above, it's worth noting that the majority of the collection fields are <i>unique</i> and, therefore, it wasn't possible to depict predominant values for those fields. Nevertheless, some fields did evidence predominant value such as:  
 </p>
 
 * The <strong>price</strong> field with a 90% predominance of the value "Free".
