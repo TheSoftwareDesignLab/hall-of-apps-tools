@@ -9,7 +9,7 @@ table_contents:
 show_downloads: true
 
 tools_repo: https://github.com/TheSoftwareDesignLab/hall-of-apps-tools
-dataset_doi: https://thesoftwaredesignlab.github.io/hall-of-apps-tools/
+dataset_doi: https://doi.org/10.5281/zenodo.3653367
 
 logo1: /assets/imgs/structural/andes.png
 tsdllogo: /assets/imgs/structural/tsdl.png
