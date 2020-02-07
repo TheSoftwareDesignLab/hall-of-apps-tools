@@ -1,0 +1,1610 @@
+[
+    {
+        "id": 1,
+        "pathName": "editorChoice",
+        "path": "https://play.google.com/store/apps/collection/promotion_3002800_editors_choice_apps?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 2,
+        "pathName": "general_topFree",
+        "path": "https://play.google.com/store/apps/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 3,
+        "pathName": "general_topSelling",
+        "path": "https://play.google.com/store/apps/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 4,
+        "pathName": "art_and_design_topFree",
+        "path": "https://play.google.com/store/apps/category/ART_AND_DESIGN/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 5,
+        "pathName": "art_and_design_topSelling",
+        "path": "https://play.google.com/store/apps/category/ART_AND_DESIGN/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 6,
+        "pathName": "auto_and_vehicles_topFree",
+        "path": "https://play.google.com/store/apps/category/AUTO_AND_VEHICLES/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 7,
+        "pathName": "auto_and_vehicles_topSelling",
+        "path": "https://play.google.com/store/apps/category/AUTO_AND_VEHICLES/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 8,
+        "pathName": "beauty_topFree",
+        "path": "https://play.google.com/store/apps/category/BEAUTY/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 9,
+        "pathName": "beauty_topSelling",
+        "path": "https://play.google.com/store/apps/category/BEAUTY/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 10,
+        "pathName": "books_and_reference_topFree",
+        "path": "https://play.google.com/store/apps/category/BOOKS_AND_REFERENCE/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 11,
+        "pathName": "books_and_reference_topSelling",
+        "path": "https://play.google.com/store/apps/category/BOOKS_AND_REFERENCE/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 12,
+        "pathName": "business_topFree",
+        "path": "https://play.google.com/store/apps/category/BUSINESS/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 13,
+        "pathName": "business_topSelling",
+        "path": "https://play.google.com/store/apps/category/BUSINESS/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 14,
+        "pathName": "comics_topFree",
+        "path": "https://play.google.com/store/apps/category/COMICS/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 15,
+        "pathName": "comics_topSelling",
+        "path": "https://play.google.com/store/apps/category/COMICS/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 16,
+        "pathName": "communication_topFree",
+        "path": "https://play.google.com/store/apps/category/COMMUNICATION/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 17,
+        "pathName": "communication_topSelling",
+        "path": "https://play.google.com/store/apps/category/COMMUNICATION/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 18,
+        "pathName": "dating_topFree",
+        "path": "https://play.google.com/store/apps/category/DATING/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 19,
+        "pathName": "dating_topSelling",
+        "path": "https://play.google.com/store/apps/category/DATING/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 20,
+        "pathName": "education_topFree",
+        "path": "https://play.google.com/store/apps/category/EDUCATION/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 21,
+        "pathName": "education_topSelling",
+        "path": "https://play.google.com/store/apps/category/EDUCATION/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 22,
+        "pathName": "entertainment_topFree",
+        "path": "https://play.google.com/store/apps/category/ENTERTAINMENT/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 23,
+        "pathName": "entertainment_topSelling",
+        "path": "https://play.google.com/store/apps/category/ENTERTAINMENT/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 24,
+        "pathName": "events_topFree",
+        "path": "https://play.google.com/store/apps/category/EVENTS/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 25,
+        "pathName": "events_topSelling",
+        "path": "https://play.google.com/store/apps/category/EVENTS/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 26,
+        "pathName": "finance_topFree",
+        "path": "https://play.google.com/store/apps/category/FINANCE/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 27,
+        "pathName": "finance_topSelling",
+        "path": "https://play.google.com/store/apps/category/FINANCE/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 28,
+        "pathName": "food_and_drink_topFree",
+        "path": "https://play.google.com/store/apps/category/FOOD_AND_DRINK/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 29,
+        "pathName": "food_and_drink_topSelling",
+        "path": "https://play.google.com/store/apps/category/FOOD_AND_DRINK/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 30,
+        "pathName": "health_and_fitness_topFree",
+        "path": "https://play.google.com/store/apps/category/HEALTH_AND_FITNESS/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 31,
+        "pathName": "health_and_fitness_topSelling",
+        "path": "https://play.google.com/store/apps/category/HEALTH_AND_FITNESS/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 32,
+        "pathName": "house_and_home_topFree",
+        "path": "https://play.google.com/store/apps/category/HOUSE_AND_HOME/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 33,
+        "pathName": "house_and_home_topSelling",
+        "path": "https://play.google.com/store/apps/category/HOUSE_AND_HOME/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 34,
+        "pathName": "libraries_and_demo_topFree",
+        "path": "https://play.google.com/store/apps/category/LIBRARIES_AND_DEMO/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 35,
+        "pathName": "libraries_and_demo_topSelling",
+        "path": "https://play.google.com/store/apps/category/LIBRARIES_AND_DEMO/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 36,
+        "pathName": "lifestyle_topFree",
+        "path": "https://play.google.com/store/apps/category/LIFESTYLE/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 37,
+        "pathName": "lifestyle_topSelling",
+        "path": "https://play.google.com/store/apps/category/LIFESTYLE/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 38,
+        "pathName": "maps_and_navigation_topFree",
+        "path": "https://play.google.com/store/apps/category/MAPS_AND_NAVIGATION/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 39,
+        "pathName": "maps_and_navigation_topSelling",
+        "path": "https://play.google.com/store/apps/category/MAPS_AND_NAVIGATION/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 40,
+        "pathName": "medical_topFree",
+        "path": "https://play.google.com/store/apps/category/MEDICAL/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 41,
+        "pathName": "medical_topSelling",
+        "path": "https://play.google.com/store/apps/category/MEDICAL/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 42,
+        "pathName": "music_and_audio_topFree",
+        "path": "https://play.google.com/store/apps/category/MUSIC_AND_AUDIO/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 43,
+        "pathName": "music_and_audio_topSelling",
+        "path": "https://play.google.com/store/apps/category/MUSIC_AND_AUDIO/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 44,
+        "pathName": "news_and_magazines_topFree",
+        "path": "https://play.google.com/store/apps/category/NEWS_AND_MAGAZINES/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 45,
+        "pathName": "news_and_magazines_topSelling",
+        "path": "https://play.google.com/store/apps/category/NEWS_AND_MAGAZINES/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 46,
+        "pathName": "parenting_topFree",
+        "path": "https://play.google.com/store/apps/category/PARENTING/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 47,
+        "pathName": "parenting_topSelling",
+        "path": "https://play.google.com/store/apps/category/PARENTING/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 48,
+        "pathName": "personalization_topFree",
+        "path": "https://play.google.com/store/apps/category/PERSONALIZATION/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 49,
+        "pathName": "personalization_topSelling",
+        "path": "https://play.google.com/store/apps/category/PERSONALIZATION/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 50,
+        "pathName": "photography_topFree",
+        "path": "https://play.google.com/store/apps/category/PHOTOGRAPHY/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 51,
+        "pathName": "photography_topSelling",
+        "path": "https://play.google.com/store/apps/category/PHOTOGRAPHY/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 52,
+        "pathName": "productivity_topFree",
+        "path": "https://play.google.com/store/apps/category/PRODUCTIVITY/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 53,
+        "pathName": "productivity_topSelling",
+        "path": "https://play.google.com/store/apps/category/PRODUCTIVITY/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 54,
+        "pathName": "shopping_topFree",
+        "path": "https://play.google.com/store/apps/category/SHOPPING/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 55,
+        "pathName": "shopping_topSelling",
+        "path": "https://play.google.com/store/apps/category/SHOPPING/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 56,
+        "pathName": "social_topFree",
+        "path": "https://play.google.com/store/apps/category/SOCIAL/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 57,
+        "pathName": "social_topSelling",
+        "path": "https://play.google.com/store/apps/category/SOCIAL/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 58,
+        "pathName": "sports_topFree",
+        "path": "https://play.google.com/store/apps/category/SPORTS/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 59,
+        "pathName": "sports_topSelling",
+        "path": "https://play.google.com/store/apps/category/SPORTS/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 60,
+        "pathName": "tools_topFree",
+        "path": "https://play.google.com/store/apps/category/TOOLS/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 61,
+        "pathName": "tools_topSelling",
+        "path": "https://play.google.com/store/apps/category/TOOLS/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 62,
+        "pathName": "travel_and_local_topFree",
+        "path": "https://play.google.com/store/apps/category/TRAVEL_AND_LOCAL/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 63,
+        "pathName": "travel_and_local_topSelling",
+        "path": "https://play.google.com/store/apps/category/TRAVEL_AND_LOCAL/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 64,
+        "pathName": "video_players_topFree",
+        "path": "https://play.google.com/store/apps/category/VIDEO_PLAYERS/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 65,
+        "pathName": "video_players_topSelling",
+        "path": "https://play.google.com/store/apps/category/VIDEO_PLAYERS/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 66,
+        "pathName": "weather_topFree",
+        "path": "https://play.google.com/store/apps/category/WEATHER/collection/topselling_free?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 67,
+        "pathName": "weather_topSelling",
+        "path": "https://play.google.com/store/apps/category/WEATHER/collection/topselling_paid?hl=en&gl=co",
+        "country": "co"
+    },
+    {
+        "id": 68,
+        "pathName": "editorChoice",
+        "path": "https://play.google.com/store/apps/collection/promotion_3002800_editors_choice_apps?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 69,
+        "pathName": "general_topFree",
+        "path": "https://play.google.com/store/apps/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 70,
+        "pathName": "general_topSelling",
+        "path": "https://play.google.com/store/apps/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 71,
+        "pathName": "art_and_design_topFree",
+        "path": "https://play.google.com/store/apps/category/ART_AND_DESIGN/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 72,
+        "pathName": "art_and_design_topSelling",
+        "path": "https://play.google.com/store/apps/category/ART_AND_DESIGN/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 73,
+        "pathName": "auto_and_vehicles_topFree",
+        "path": "https://play.google.com/store/apps/category/AUTO_AND_VEHICLES/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 74,
+        "pathName": "auto_and_vehicles_topSelling",
+        "path": "https://play.google.com/store/apps/category/AUTO_AND_VEHICLES/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 75,
+        "pathName": "beauty_topFree",
+        "path": "https://play.google.com/store/apps/category/BEAUTY/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 76,
+        "pathName": "beauty_topSelling",
+        "path": "https://play.google.com/store/apps/category/BEAUTY/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 77,
+        "pathName": "books_and_reference_topFree",
+        "path": "https://play.google.com/store/apps/category/BOOKS_AND_REFERENCE/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 78,
+        "pathName": "books_and_reference_topSelling",
+        "path": "https://play.google.com/store/apps/category/BOOKS_AND_REFERENCE/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 79,
+        "pathName": "business_topFree",
+        "path": "https://play.google.com/store/apps/category/BUSINESS/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 80,
+        "pathName": "business_topSelling",
+        "path": "https://play.google.com/store/apps/category/BUSINESS/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 81,
+        "pathName": "comics_topFree",
+        "path": "https://play.google.com/store/apps/category/COMICS/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 82,
+        "pathName": "comics_topSelling",
+        "path": "https://play.google.com/store/apps/category/COMICS/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 83,
+        "pathName": "communication_topFree",
+        "path": "https://play.google.com/store/apps/category/COMMUNICATION/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 84,
+        "pathName": "communication_topSelling",
+        "path": "https://play.google.com/store/apps/category/COMMUNICATION/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 85,
+        "pathName": "dating_topFree",
+        "path": "https://play.google.com/store/apps/category/DATING/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 86,
+        "pathName": "dating_topSelling",
+        "path": "https://play.google.com/store/apps/category/DATING/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 87,
+        "pathName": "education_topFree",
+        "path": "https://play.google.com/store/apps/category/EDUCATION/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 88,
+        "pathName": "education_topSelling",
+        "path": "https://play.google.com/store/apps/category/EDUCATION/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 89,
+        "pathName": "entertainment_topFree",
+        "path": "https://play.google.com/store/apps/category/ENTERTAINMENT/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 90,
+        "pathName": "entertainment_topSelling",
+        "path": "https://play.google.com/store/apps/category/ENTERTAINMENT/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 91,
+        "pathName": "events_topFree",
+        "path": "https://play.google.com/store/apps/category/EVENTS/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 92,
+        "pathName": "events_topSelling",
+        "path": "https://play.google.com/store/apps/category/EVENTS/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 93,
+        "pathName": "finance_topFree",
+        "path": "https://play.google.com/store/apps/category/FINANCE/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 94,
+        "pathName": "finance_topSelling",
+        "path": "https://play.google.com/store/apps/category/FINANCE/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 95,
+        "pathName": "food_and_drink_topFree",
+        "path": "https://play.google.com/store/apps/category/FOOD_AND_DRINK/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 96,
+        "pathName": "food_and_drink_topSelling",
+        "path": "https://play.google.com/store/apps/category/FOOD_AND_DRINK/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 97,
+        "pathName": "health_and_fitness_topFree",
+        "path": "https://play.google.com/store/apps/category/HEALTH_AND_FITNESS/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 98,
+        "pathName": "health_and_fitness_topSelling",
+        "path": "https://play.google.com/store/apps/category/HEALTH_AND_FITNESS/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 99,
+        "pathName": "house_and_home_topFree",
+        "path": "https://play.google.com/store/apps/category/HOUSE_AND_HOME/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 100,
+        "pathName": "house_and_home_topSelling",
+        "path": "https://play.google.com/store/apps/category/HOUSE_AND_HOME/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 101,
+        "pathName": "libraries_and_demo_topFree",
+        "path": "https://play.google.com/store/apps/category/LIBRARIES_AND_DEMO/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 102,
+        "pathName": "libraries_and_demo_topSelling",
+        "path": "https://play.google.com/store/apps/category/LIBRARIES_AND_DEMO/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 103,
+        "pathName": "lifestyle_topFree",
+        "path": "https://play.google.com/store/apps/category/LIFESTYLE/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 104,
+        "pathName": "lifestyle_topSelling",
+        "path": "https://play.google.com/store/apps/category/LIFESTYLE/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 105,
+        "pathName": "maps_and_navigation_topFree",
+        "path": "https://play.google.com/store/apps/category/MAPS_AND_NAVIGATION/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 106,
+        "pathName": "maps_and_navigation_topSelling",
+        "path": "https://play.google.com/store/apps/category/MAPS_AND_NAVIGATION/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 107,
+        "pathName": "medical_topFree",
+        "path": "https://play.google.com/store/apps/category/MEDICAL/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 108,
+        "pathName": "medical_topSelling",
+        "path": "https://play.google.com/store/apps/category/MEDICAL/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 109,
+        "pathName": "music_and_audio_topFree",
+        "path": "https://play.google.com/store/apps/category/MUSIC_AND_AUDIO/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 110,
+        "pathName": "music_and_audio_topSelling",
+        "path": "https://play.google.com/store/apps/category/MUSIC_AND_AUDIO/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 111,
+        "pathName": "news_and_magazines_topFree",
+        "path": "https://play.google.com/store/apps/category/NEWS_AND_MAGAZINES/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 112,
+        "pathName": "news_and_magazines_topSelling",
+        "path": "https://play.google.com/store/apps/category/NEWS_AND_MAGAZINES/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 113,
+        "pathName": "parenting_topFree",
+        "path": "https://play.google.com/store/apps/category/PARENTING/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 114,
+        "pathName": "parenting_topSelling",
+        "path": "https://play.google.com/store/apps/category/PARENTING/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 115,
+        "pathName": "personalization_topFree",
+        "path": "https://play.google.com/store/apps/category/PERSONALIZATION/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 116,
+        "pathName": "personalization_topSelling",
+        "path": "https://play.google.com/store/apps/category/PERSONALIZATION/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 117,
+        "pathName": "photography_topFree",
+        "path": "https://play.google.com/store/apps/category/PHOTOGRAPHY/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 118,
+        "pathName": "photography_topSelling",
+        "path": "https://play.google.com/store/apps/category/PHOTOGRAPHY/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 119,
+        "pathName": "productivity_topFree",
+        "path": "https://play.google.com/store/apps/category/PRODUCTIVITY/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 120,
+        "pathName": "productivity_topSelling",
+        "path": "https://play.google.com/store/apps/category/PRODUCTIVITY/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 121,
+        "pathName": "shopping_topFree",
+        "path": "https://play.google.com/store/apps/category/SHOPPING/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 122,
+        "pathName": "shopping_topSelling",
+        "path": "https://play.google.com/store/apps/category/SHOPPING/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 123,
+        "pathName": "social_topFree",
+        "path": "https://play.google.com/store/apps/category/SOCIAL/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 124,
+        "pathName": "social_topSelling",
+        "path": "https://play.google.com/store/apps/category/SOCIAL/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 125,
+        "pathName": "sports_topFree",
+        "path": "https://play.google.com/store/apps/category/SPORTS/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 126,
+        "pathName": "sports_topSelling",
+        "path": "https://play.google.com/store/apps/category/SPORTS/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 127,
+        "pathName": "tools_topFree",
+        "path": "https://play.google.com/store/apps/category/TOOLS/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 128,
+        "pathName": "tools_topSelling",
+        "path": "https://play.google.com/store/apps/category/TOOLS/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 129,
+        "pathName": "travel_and_local_topFree",
+        "path": "https://play.google.com/store/apps/category/TRAVEL_AND_LOCAL/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 130,
+        "pathName": "travel_and_local_topSelling",
+        "path": "https://play.google.com/store/apps/category/TRAVEL_AND_LOCAL/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 131,
+        "pathName": "video_players_topFree",
+        "path": "https://play.google.com/store/apps/category/VIDEO_PLAYERS/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 132,
+        "pathName": "video_players_topSelling",
+        "path": "https://play.google.com/store/apps/category/VIDEO_PLAYERS/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 133,
+        "pathName": "weather_topFree",
+        "path": "https://play.google.com/store/apps/category/WEATHER/collection/topselling_free?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 134,
+        "pathName": "weather_topSelling",
+        "path": "https://play.google.com/store/apps/category/WEATHER/collection/topselling_paid?hl=en&gl=us",
+        "country": "us"
+    },
+    {
+        "id": 135,
+        "pathName": "editorChoice",
+        "path": "https://play.google.com/store/apps/collection/promotion_3002800_editors_choice_apps?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 136,
+        "pathName": "general_topFree",
+        "path": "https://play.google.com/store/apps/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 137,
+        "pathName": "general_topSelling",
+        "path": "https://play.google.com/store/apps/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 138,
+        "pathName": "art_and_design_topFree",
+        "path": "https://play.google.com/store/apps/category/ART_AND_DESIGN/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 139,
+        "pathName": "art_and_design_topSelling",
+        "path": "https://play.google.com/store/apps/category/ART_AND_DESIGN/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 140,
+        "pathName": "auto_and_vehicles_topFree",
+        "path": "https://play.google.com/store/apps/category/AUTO_AND_VEHICLES/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 141,
+        "pathName": "auto_and_vehicles_topSelling",
+        "path": "https://play.google.com/store/apps/category/AUTO_AND_VEHICLES/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 142,
+        "pathName": "beauty_topFree",
+        "path": "https://play.google.com/store/apps/category/BEAUTY/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 143,
+        "pathName": "beauty_topSelling",
+        "path": "https://play.google.com/store/apps/category/BEAUTY/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 144,
+        "pathName": "books_and_reference_topFree",
+        "path": "https://play.google.com/store/apps/category/BOOKS_AND_REFERENCE/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 145,
+        "pathName": "books_and_reference_topSelling",
+        "path": "https://play.google.com/store/apps/category/BOOKS_AND_REFERENCE/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 146,
+        "pathName": "business_topFree",
+        "path": "https://play.google.com/store/apps/category/BUSINESS/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 147,
+        "pathName": "business_topSelling",
+        "path": "https://play.google.com/store/apps/category/BUSINESS/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 148,
+        "pathName": "comics_topFree",
+        "path": "https://play.google.com/store/apps/category/COMICS/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 149,
+        "pathName": "comics_topSelling",
+        "path": "https://play.google.com/store/apps/category/COMICS/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 150,
+        "pathName": "communication_topFree",
+        "path": "https://play.google.com/store/apps/category/COMMUNICATION/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 151,
+        "pathName": "communication_topSelling",
+        "path": "https://play.google.com/store/apps/category/COMMUNICATION/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 152,
+        "pathName": "dating_topFree",
+        "path": "https://play.google.com/store/apps/category/DATING/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 153,
+        "pathName": "dating_topSelling",
+        "path": "https://play.google.com/store/apps/category/DATING/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 154,
+        "pathName": "education_topFree",
+        "path": "https://play.google.com/store/apps/category/EDUCATION/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 155,
+        "pathName": "education_topSelling",
+        "path": "https://play.google.com/store/apps/category/EDUCATION/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 156,
+        "pathName": "entertainment_topFree",
+        "path": "https://play.google.com/store/apps/category/ENTERTAINMENT/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 157,
+        "pathName": "entertainment_topSelling",
+        "path": "https://play.google.com/store/apps/category/ENTERTAINMENT/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 158,
+        "pathName": "events_topFree",
+        "path": "https://play.google.com/store/apps/category/EVENTS/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 159,
+        "pathName": "events_topSelling",
+        "path": "https://play.google.com/store/apps/category/EVENTS/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 160,
+        "pathName": "finance_topFree",
+        "path": "https://play.google.com/store/apps/category/FINANCE/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 161,
+        "pathName": "finance_topSelling",
+        "path": "https://play.google.com/store/apps/category/FINANCE/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 162,
+        "pathName": "food_and_drink_topFree",
+        "path": "https://play.google.com/store/apps/category/FOOD_AND_DRINK/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 163,
+        "pathName": "food_and_drink_topSelling",
+        "path": "https://play.google.com/store/apps/category/FOOD_AND_DRINK/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 164,
+        "pathName": "health_and_fitness_topFree",
+        "path": "https://play.google.com/store/apps/category/HEALTH_AND_FITNESS/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 165,
+        "pathName": "health_and_fitness_topSelling",
+        "path": "https://play.google.com/store/apps/category/HEALTH_AND_FITNESS/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 166,
+        "pathName": "house_and_home_topFree",
+        "path": "https://play.google.com/store/apps/category/HOUSE_AND_HOME/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 167,
+        "pathName": "house_and_home_topSelling",
+        "path": "https://play.google.com/store/apps/category/HOUSE_AND_HOME/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 168,
+        "pathName": "libraries_and_demo_topFree",
+        "path": "https://play.google.com/store/apps/category/LIBRARIES_AND_DEMO/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 169,
+        "pathName": "libraries_and_demo_topSelling",
+        "path": "https://play.google.com/store/apps/category/LIBRARIES_AND_DEMO/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 170,
+        "pathName": "lifestyle_topFree",
+        "path": "https://play.google.com/store/apps/category/LIFESTYLE/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 171,
+        "pathName": "lifestyle_topSelling",
+        "path": "https://play.google.com/store/apps/category/LIFESTYLE/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 172,
+        "pathName": "maps_and_navigation_topFree",
+        "path": "https://play.google.com/store/apps/category/MAPS_AND_NAVIGATION/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 173,
+        "pathName": "maps_and_navigation_topSelling",
+        "path": "https://play.google.com/store/apps/category/MAPS_AND_NAVIGATION/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 174,
+        "pathName": "medical_topFree",
+        "path": "https://play.google.com/store/apps/category/MEDICAL/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 175,
+        "pathName": "medical_topSelling",
+        "path": "https://play.google.com/store/apps/category/MEDICAL/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 176,
+        "pathName": "music_and_audio_topFree",
+        "path": "https://play.google.com/store/apps/category/MUSIC_AND_AUDIO/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 177,
+        "pathName": "music_and_audio_topSelling",
+        "path": "https://play.google.com/store/apps/category/MUSIC_AND_AUDIO/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 178,
+        "pathName": "news_and_magazines_topFree",
+        "path": "https://play.google.com/store/apps/category/NEWS_AND_MAGAZINES/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 179,
+        "pathName": "news_and_magazines_topSelling",
+        "path": "https://play.google.com/store/apps/category/NEWS_AND_MAGAZINES/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 180,
+        "pathName": "parenting_topFree",
+        "path": "https://play.google.com/store/apps/category/PARENTING/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 181,
+        "pathName": "parenting_topSelling",
+        "path": "https://play.google.com/store/apps/category/PARENTING/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 182,
+        "pathName": "personalization_topFree",
+        "path": "https://play.google.com/store/apps/category/PERSONALIZATION/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 183,
+        "pathName": "personalization_topSelling",
+        "path": "https://play.google.com/store/apps/category/PERSONALIZATION/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 184,
+        "pathName": "photography_topFree",
+        "path": "https://play.google.com/store/apps/category/PHOTOGRAPHY/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 185,
+        "pathName": "photography_topSelling",
+        "path": "https://play.google.com/store/apps/category/PHOTOGRAPHY/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 186,
+        "pathName": "productivity_topFree",
+        "path": "https://play.google.com/store/apps/category/PRODUCTIVITY/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 187,
+        "pathName": "productivity_topSelling",
+        "path": "https://play.google.com/store/apps/category/PRODUCTIVITY/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 188,
+        "pathName": "shopping_topFree",
+        "path": "https://play.google.com/store/apps/category/SHOPPING/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 189,
+        "pathName": "shopping_topSelling",
+        "path": "https://play.google.com/store/apps/category/SHOPPING/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 190,
+        "pathName": "social_topFree",
+        "path": "https://play.google.com/store/apps/category/SOCIAL/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 191,
+        "pathName": "social_topSelling",
+        "path": "https://play.google.com/store/apps/category/SOCIAL/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 192,
+        "pathName": "sports_topFree",
+        "path": "https://play.google.com/store/apps/category/SPORTS/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 193,
+        "pathName": "sports_topSelling",
+        "path": "https://play.google.com/store/apps/category/SPORTS/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 194,
+        "pathName": "tools_topFree",
+        "path": "https://play.google.com/store/apps/category/TOOLS/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 195,
+        "pathName": "tools_topSelling",
+        "path": "https://play.google.com/store/apps/category/TOOLS/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 196,
+        "pathName": "travel_and_local_topFree",
+        "path": "https://play.google.com/store/apps/category/TRAVEL_AND_LOCAL/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 197,
+        "pathName": "travel_and_local_topSelling",
+        "path": "https://play.google.com/store/apps/category/TRAVEL_AND_LOCAL/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 198,
+        "pathName": "video_players_topFree",
+        "path": "https://play.google.com/store/apps/category/VIDEO_PLAYERS/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 199,
+        "pathName": "video_players_topSelling",
+        "path": "https://play.google.com/store/apps/category/VIDEO_PLAYERS/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 200,
+        "pathName": "weather_topFree",
+        "path": "https://play.google.com/store/apps/category/WEATHER/collection/topselling_free?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 201,
+        "pathName": "weather_topSelling",
+        "path": "https://play.google.com/store/apps/category/WEATHER/collection/topselling_paid?hl=en&gl=br",
+        "country": "br"
+    },
+    {
+        "id": 202,
+        "pathName": "editorChoice",
+        "path": "https://play.google.com/store/apps/collection/promotion_3002800_editors_choice_apps?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 203,
+        "pathName": "general_topFree",
+        "path": "https://play.google.com/store/apps/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 204,
+        "pathName": "general_topSelling",
+        "path": "https://play.google.com/store/apps/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 205,
+        "pathName": "art_and_design_topFree",
+        "path": "https://play.google.com/store/apps/category/ART_AND_DESIGN/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 206,
+        "pathName": "art_and_design_topSelling",
+        "path": "https://play.google.com/store/apps/category/ART_AND_DESIGN/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 207,
+        "pathName": "auto_and_vehicles_topFree",
+        "path": "https://play.google.com/store/apps/category/AUTO_AND_VEHICLES/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 208,
+        "pathName": "auto_and_vehicles_topSelling",
+        "path": "https://play.google.com/store/apps/category/AUTO_AND_VEHICLES/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 209,
+        "pathName": "beauty_topFree",
+        "path": "https://play.google.com/store/apps/category/BEAUTY/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 210,
+        "pathName": "beauty_topSelling",
+        "path": "https://play.google.com/store/apps/category/BEAUTY/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 211,
+        "pathName": "books_and_reference_topFree",
+        "path": "https://play.google.com/store/apps/category/BOOKS_AND_REFERENCE/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 212,
+        "pathName": "books_and_reference_topSelling",
+        "path": "https://play.google.com/store/apps/category/BOOKS_AND_REFERENCE/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 213,
+        "pathName": "business_topFree",
+        "path": "https://play.google.com/store/apps/category/BUSINESS/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 214,
+        "pathName": "business_topSelling",
+        "path": "https://play.google.com/store/apps/category/BUSINESS/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 215,
+        "pathName": "comics_topFree",
+        "path": "https://play.google.com/store/apps/category/COMICS/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 216,
+        "pathName": "comics_topSelling",
+        "path": "https://play.google.com/store/apps/category/COMICS/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 217,
+        "pathName": "communication_topFree",
+        "path": "https://play.google.com/store/apps/category/COMMUNICATION/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 218,
+        "pathName": "communication_topSelling",
+        "path": "https://play.google.com/store/apps/category/COMMUNICATION/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 219,
+        "pathName": "dating_topFree",
+        "path": "https://play.google.com/store/apps/category/DATING/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 220,
+        "pathName": "dating_topSelling",
+        "path": "https://play.google.com/store/apps/category/DATING/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 221,
+        "pathName": "education_topFree",
+        "path": "https://play.google.com/store/apps/category/EDUCATION/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 222,
+        "pathName": "education_topSelling",
+        "path": "https://play.google.com/store/apps/category/EDUCATION/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 223,
+        "pathName": "entertainment_topFree",
+        "path": "https://play.google.com/store/apps/category/ENTERTAINMENT/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 224,
+        "pathName": "entertainment_topSelling",
+        "path": "https://play.google.com/store/apps/category/ENTERTAINMENT/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 225,
+        "pathName": "events_topFree",
+        "path": "https://play.google.com/store/apps/category/EVENTS/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 226,
+        "pathName": "events_topSelling",
+        "path": "https://play.google.com/store/apps/category/EVENTS/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 227,
+        "pathName": "finance_topFree",
+        "path": "https://play.google.com/store/apps/category/FINANCE/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 228,
+        "pathName": "finance_topSelling",
+        "path": "https://play.google.com/store/apps/category/FINANCE/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 229,
+        "pathName": "food_and_drink_topFree",
+        "path": "https://play.google.com/store/apps/category/FOOD_AND_DRINK/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 230,
+        "pathName": "food_and_drink_topSelling",
+        "path": "https://play.google.com/store/apps/category/FOOD_AND_DRINK/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 231,
+        "pathName": "health_and_fitness_topFree",
+        "path": "https://play.google.com/store/apps/category/HEALTH_AND_FITNESS/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 232,
+        "pathName": "health_and_fitness_topSelling",
+        "path": "https://play.google.com/store/apps/category/HEALTH_AND_FITNESS/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 233,
+        "pathName": "house_and_home_topFree",
+        "path": "https://play.google.com/store/apps/category/HOUSE_AND_HOME/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 234,
+        "pathName": "house_and_home_topSelling",
+        "path": "https://play.google.com/store/apps/category/HOUSE_AND_HOME/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 235,
+        "pathName": "libraries_and_demo_topFree",
+        "path": "https://play.google.com/store/apps/category/LIBRARIES_AND_DEMO/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 236,
+        "pathName": "libraries_and_demo_topSelling",
+        "path": "https://play.google.com/store/apps/category/LIBRARIES_AND_DEMO/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 237,
+        "pathName": "lifestyle_topFree",
+        "path": "https://play.google.com/store/apps/category/LIFESTYLE/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 238,
+        "pathName": "lifestyle_topSelling",
+        "path": "https://play.google.com/store/apps/category/LIFESTYLE/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 239,
+        "pathName": "maps_and_navigation_topFree",
+        "path": "https://play.google.com/store/apps/category/MAPS_AND_NAVIGATION/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 240,
+        "pathName": "maps_and_navigation_topSelling",
+        "path": "https://play.google.com/store/apps/category/MAPS_AND_NAVIGATION/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 241,
+        "pathName": "medical_topFree",
+        "path": "https://play.google.com/store/apps/category/MEDICAL/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 242,
+        "pathName": "medical_topSelling",
+        "path": "https://play.google.com/store/apps/category/MEDICAL/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 243,
+        "pathName": "music_and_audio_topFree",
+        "path": "https://play.google.com/store/apps/category/MUSIC_AND_AUDIO/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 244,
+        "pathName": "music_and_audio_topSelling",
+        "path": "https://play.google.com/store/apps/category/MUSIC_AND_AUDIO/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 245,
+        "pathName": "news_and_magazines_topFree",
+        "path": "https://play.google.com/store/apps/category/NEWS_AND_MAGAZINES/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 246,
+        "pathName": "news_and_magazines_topSelling",
+        "path": "https://play.google.com/store/apps/category/NEWS_AND_MAGAZINES/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 247,
+        "pathName": "parenting_topFree",
+        "path": "https://play.google.com/store/apps/category/PARENTING/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 248,
+        "pathName": "parenting_topSelling",
+        "path": "https://play.google.com/store/apps/category/PARENTING/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 249,
+        "pathName": "personalization_topFree",
+        "path": "https://play.google.com/store/apps/category/PERSONALIZATION/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 250,
+        "pathName": "personalization_topSelling",
+        "path": "https://play.google.com/store/apps/category/PERSONALIZATION/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 251,
+        "pathName": "photography_topFree",
+        "path": "https://play.google.com/store/apps/category/PHOTOGRAPHY/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 252,
+        "pathName": "photography_topSelling",
+        "path": "https://play.google.com/store/apps/category/PHOTOGRAPHY/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 253,
+        "pathName": "productivity_topFree",
+        "path": "https://play.google.com/store/apps/category/PRODUCTIVITY/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 254,
+        "pathName": "productivity_topSelling",
+        "path": "https://play.google.com/store/apps/category/PRODUCTIVITY/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 255,
+        "pathName": "shopping_topFree",
+        "path": "https://play.google.com/store/apps/category/SHOPPING/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 256,
+        "pathName": "shopping_topSelling",
+        "path": "https://play.google.com/store/apps/category/SHOPPING/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 257,
+        "pathName": "social_topFree",
+        "path": "https://play.google.com/store/apps/category/SOCIAL/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 258,
+        "pathName": "social_topSelling",
+        "path": "https://play.google.com/store/apps/category/SOCIAL/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 259,
+        "pathName": "sports_topFree",
+        "path": "https://play.google.com/store/apps/category/SPORTS/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 260,
+        "pathName": "sports_topSelling",
+        "path": "https://play.google.com/store/apps/category/SPORTS/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 261,
+        "pathName": "tools_topFree",
+        "path": "https://play.google.com/store/apps/category/TOOLS/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 262,
+        "pathName": "tools_topSelling",
+        "path": "https://play.google.com/store/apps/category/TOOLS/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 263,
+        "pathName": "travel_and_local_topFree",
+        "path": "https://play.google.com/store/apps/category/TRAVEL_AND_LOCAL/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 264,
+        "pathName": "travel_and_local_topSelling",
+        "path": "https://play.google.com/store/apps/category/TRAVEL_AND_LOCAL/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 265,
+        "pathName": "video_players_topFree",
+        "path": "https://play.google.com/store/apps/category/VIDEO_PLAYERS/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 266,
+        "pathName": "video_players_topSelling",
+        "path": "https://play.google.com/store/apps/category/VIDEO_PLAYERS/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 267,
+        "pathName": "weather_topFree",
+        "path": "https://play.google.com/store/apps/category/WEATHER/collection/topselling_free?hl=en&gl=de",
+        "country": "de"
+    },
+    {
+        "id": 268,
+        "pathName": "weather_topSelling",
+        "path": "https://play.google.com/store/apps/category/WEATHER/collection/topselling_paid?hl=en&gl=de",
+        "country": "de"
+    }
+]
