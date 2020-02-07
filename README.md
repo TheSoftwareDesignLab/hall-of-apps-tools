@@ -1,4 +1,7 @@
 # Hall of Apps: The Top Android Apps Metadata Archive
+| Resource | DOI |
+|:---:|:---:|
+|Dataset| [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3653367.svg)](https://doi.org/10.5281/zenodo.3653367)|
 
 Hall-of-Apps is a dataset containing top charts’ apps metadata extracted (weekly) from GP, for 4 different countries, during 30 weeks.
 
