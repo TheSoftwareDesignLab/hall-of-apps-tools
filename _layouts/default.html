@@ -11,7 +11,7 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
-    
+    <!-- <script src="https://kit.fontawesome.com/fb6e0545b4.js" crossorigin="anonymous"></script> -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
   </head>
   <body>
@@ -22,14 +22,15 @@
         {% if site.logo %}
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
+        <!-- <!-- <div align="center"><i class="fab fa-google-play fa-10x" fa-></i></div> --> -->
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.show_downloads %}
         <ul class="downloads">
-          <li><a href="{{ site.github.repository_url }}">Visit Repo: <strong>Extraction Tools</strong></a></li>
-          <li><a href="{{ site.github.zip_url }}">Download <strong>Extraction Tools</strong></a></li>
-          <li><a href="{{ site.dataset_doi }}">Download <strong>Dataset</strong></a></li>
+          <li><a href="{{ site.github.repository_url }}" target=”_blank”>Visit Repo: <strong>Extraction Tools</strong></a></li>
+          <li><a href="{{ site.zip_url }}" target=”_blank”>Download <strong>Extraction Tools</strong></a></li>
+          <li><a href="{{ site.dataset_doi }}" target=”_blank”>Download <strong>Dataset</strong></a></li>
         </ul>
         {% endif %}
 
