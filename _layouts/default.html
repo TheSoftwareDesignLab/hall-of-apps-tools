@@ -35,9 +35,8 @@
 
         {% if site.show_downloads %}
         <ul class="downloads">
-          <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
-          <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
+          <li><a href="{{ site.tools_repo }}">Extraction Tools</a></li>
+          <li><a href="{{ site.dataset_doi }}">Dataset</a></li>
         </ul>
         {% endif %}
 
@@ -57,9 +56,8 @@
       </section>
       <footer>
         {% if site.github.is_project_page %}
-        <p>This project is maintained by </p>
+        <p>This dataset is maintained by </p>
         <p align="center"><a href="https://thesoftwaredesignlab.github.io/"><img src="{{site.tsdllogo | relative_url}}" alt="{{ site.github.owner_name }}" srcset="" style="width: 200px"></a></p>
-        <p>With the collaboration of </p>
         <p align="center">
           <a href="https://uniandes.edu.co/">
             <img src="{{site.logo1 | relative_url}}" alt="Universidad de Los Andes Logo" srcset="" style="width: 60px">

@@ -1,21 +1,17 @@
 
-The amount of Android apps available for download is constantly increasing, exerting a continuous pressure over developers to publish outstanding apps. Google Play (GP) is the default distribution channel for Android apps, which provides mobile app users  with metrics to select between apps to be installed such as rating, amount of downloads, previous users comments, etc. In addition to those metrics, GP presents a set of top charts to highlight the outstanding apps in different categories. Both metrics and top app charts help developers to identify whether their development decisions are well valued by the community. Therefore, app presence in these top charts must be studied to understand the features of top-apps. In this paper we present **Hall-of-Apps**, a dataset containing top charts' apps metadata extracted (weekly) from GP during 30 weeks. The data is presented as (i) raw HTML files, (ii) a mongo database with all the information contained in app's HTML files (eg. app description, category, general rating, etc.), and (iii) a set of data visualizations built with the D3.js framework. A first characterization of the data along with the urls to retrieve it can be found in here, our online appendix.
+The amount of Android apps available for download is constantly increasing, exerting a continuous pressure on developers to publish outstanding apps. Google Play (GP) is the default distribution channel for Android apps, which provides mobile app users  with metrics to identify and report apps quality such as rating, amount of downloads, previous users comments, etc. In addition to those metrics, GP presents a set of top charts that highlight the outstanding apps in different categories. Both metrics and top app charts help developers to identify whether their development decisions are well valued by the community. Therefore, app presence in these top charts is a valuable information when understanding the features of top-apps. In this paper we present **Hall-of-Apps**, a dataset containing top charts' apps metadata extracted (weekly) from GP, for 4 different countries, during 30 weeks. The data is presented as (i) raw HTML files, (ii) a MongoDB database with all the information contained in app's HTML files (_e.g.,_ app description, category, general rating, etc.), and (iii) data visualizations built with the _D3.js_ framework.
 
 ## Publications
 <p align="justify">
 Coming Soon!
 </p>
 
-## Links
-* The tools that were used to extract, parse and visualize the collected data can be found in the following [Github Repository (https://github.com/TheSoftwareDesignLab/hall-of-apps-tools)](https://github.com/TheSoftwareDesignLab/hall-of-apps-tools).
-* 
-
 ## Technologies
 <p align="justify">
 To generate the Hall-of-Apps, we used the process below to extract, parse, store and visualize the data:
 </p>
 
-![Coming Soon](/assets/imgs/structural/coming_soon.png)
+![extractionDiagram](/assets/imgs/structural/extraction.jpg)
 
 ### Google Play Scrapper
 <p align="justify">

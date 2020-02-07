@@ -1,10 +1,14 @@
 title: "Hall-of-Apps: The Top Android Apps Metadata Archive"
 table_contents:
   - Publications
-  - Links
   - Technologies
   - Dataset
   - Metrics and Statistics
+
+show_downloads: true
+
+tools_repo: https://thesoftwaredesignlab.github.io/hall-of-apps-tools/
+dataset_doi: https://thesoftwaredesignlab.github.io/hall-of-apps-tools/
 
 logo1: /assets/imgs/structural/andes.png
 tsdllogo: /assets/imgs/structural/tsdl.png
