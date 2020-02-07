@@ -171,6 +171,13 @@ Select Input <select id="chartCustomCatxaxis"></select>
   </tbody>
 </table>
 
+<p align="justify">
+  From the table shown above, it's worth noting that the category <strong>EditorChoice</strong> is also classified as <i>Top Chart</i> and doesn't have any sort of mapping, thus the information related to this particular category is not represented in the previous visualizations. Instead, a more insightful visualization for this particular category is depicted in the following chart, which aims to describe the total number of applications in our dataset per month, as well as the subdividing it by <i>Countries</i> in each month. 
+</p>
+
+<input type="checkbox" id="chartTopEditorsort">	Toggle sort 
+<svg id="chartTopEditor" width="500" height="450"></svg>
+
 ### App Collection Discoveries
 <p align="justify">
   This collection has <strong>YYY</strong> records and a total of <strong>36</strong> fields. The following figure depicts the fields data-type distribution.  

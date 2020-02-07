@@ -2,6 +2,7 @@
 d3.csv("assets/data/apps_country.csv").then(d => stackedBarChart(d, "#chartCountries", 3, "month"));
 d3.csv("assets/data/apps_top.csv").then(d => stackedBarChart(d, "#chartTops", 5, "month", "top"));
 d3.csv("assets/data/apps_top_custom.csv").then(d => stackedBarChart(d, "#chartCustomCat", 5, "month", "top"));
+d3.csv("assets/data/apps_top_editor_choice.csv").then(d => stackedBarChart(d, "#chartTopEditor", 3, "month"));
 
 /**
  * Function that creates a Stacked Bar Chart According to information stored in a 
