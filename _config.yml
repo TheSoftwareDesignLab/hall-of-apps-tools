@@ -8,7 +8,7 @@ table_contents:
 
 show_downloads: true
 
-tools_repo: https://thesoftwaredesignlab.github.io/hall-of-apps-tools/
+tools_repo: https://github.com/TheSoftwareDesignLab/hall-of-apps-tools
 dataset_doi: https://thesoftwaredesignlab.github.io/hall-of-apps-tools/
 
 logo1: /assets/imgs/structural/andes.png
