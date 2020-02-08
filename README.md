@@ -238,6 +238,9 @@ Select Input <select id="chartTypesAppxaxis"></select>
   This collection has <strong>19,095,412</strong> documents and a total of <strong>16</strong> fields. The following figure depicts the fields data-type distribution. 
 </p>
 
+Select Input <select id="chartTypesReviewxaxis"></select>
+
+<svg id="chartTypesReview" width="500" height="450"></svg>
 
 <p align="justify">
   The table below shows the data types of each of the fields of the collection, as well as the percentage of null values.
