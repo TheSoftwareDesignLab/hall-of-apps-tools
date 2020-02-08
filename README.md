@@ -29,13 +29,11 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 
 #### Important Findings
 
-* After parsing the files, we discovered that the HTML format from weeks 17 to 30, changed, thus, it was necessary to search for the new tags and adapt the parser to recognize when the file had old or new format.
+* After parsing the files, we discovered that the HTML format changed from weeks 17 to 30, thus, it was necessary to search for the new tags and adapt the parser to recognize when the file had old or new format.
 
-  * Regarding the apps metadata, the new format included different categorical values. In consequence, the amount of categories of fields such as number of installations and android versions, increased. Because of that, we created new categories to homogenize the data and decrease the amount of categories.
+  * Regarding the apps metadata, the new format included different categorical values. In consequence, the amount of categories of fields such as number of installations and android versions, increased.
 
   * The information related to the apps **reviews** and **similar apps information** was not stored in HTML tags but in JS arrays. In consequence, it was imperative to recognize the position of each field inside the array and adapt the parser to extract this information. Besides, when performing this analysis, we found reviews' date was written in milliseconds, thus, we didn't change it to date because time zone could be different from the original source. 
-
-* Depending of the country, each app had different currency, which makes the price comparrison infeasible. Thus, we calculated the price in dollars and added a new column with the calculated price.
 
 
 ## Dataset
@@ -44,7 +42,11 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 </p>
 
 <p align="justify">
-  The second component, contains the information extracted from the HTML files via the <i>developed parser</i>. That processed information was then used to populate a non-relational database, in this case, a MongoDB. We decided to use a non-relational database due to the huge amount of raw files we had and taking into account not all apps contain the same information.
+  The second component, contains the information extracted from the HTML files via the <i>developed parser</i>. Then, that processed information was used to populate a non-relational database, in this case, a MongoDB. We decided to use a non-relational database due to the huge amount of raw files we had and taking into account not all apps contain the same information.
+</p>
+
+<p align="justify">
+  Instructions to restore the database can be found here: [Hall-of-apps](https://github.com/TheSoftwareDesignLab/hall-of-apps-tools) 
 </p>
 
 ### Database Structure
@@ -62,7 +64,7 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 </p>
 
 <p align="justify">
-  Additionally, since an app could appear in different countries, multiple weeks, or even in different tops, we defined primary and foreign keys composed by: <i>retrieved date start and end</i>, <i>app id</i>, <i>category</i> and <i>country</i>. In addition, this was done to keep a relation between <i><strong>app</strong></i>, <i><strong>review</strong></i> and <i><strong>extra app</strong></i>.
+  Additionally, since an app could appear in different countries, multiple weeks, or even in different tops, we defined ids composed by: <i>retrieved date start and end</i>, <i>app id</i>, <i>category</i> and <i>country</i>. In addition, this was done to keep a relation between <i><strong>app</strong></i>, <i><strong>review</strong></i> and <i><strong>extra app</strong></i>.
 </p>
 
 ### Visualizations Scripts
@@ -180,103 +182,126 @@ Select Input <select id="chartCustomCatxaxis"></select>
 
 ### App Collection Discoveries
 <p align="justify">
-  This collection has <strong>YYY</strong> records and a total of <strong>36</strong> fields. The following figure depicts the fields data-type distribution.  
+  This collection has <strong>671,041</strong> documents and a total of <strong>32</strong> fields. The following figure depicts the fields data-type distribution.  
 </p>
 
 Select Input <select id="chartTypesAppxaxis"></select>
 <svg id="chartTypesApp" width="500" height="450"></svg>
 
 <p align="justify">
-  As the figure shows, the <i>String</i> data-type is predominant in this collection, folowed by <i>Numeric</i> fields. In the same way, it's possible to evidence the same proportions when lookin at each individual country.
+  As the figure shows, the <i>String</i> data-type is predominant in this collection, followed by <i>Numeric</i> fields. In the same way, it's possible to evidence the same proportions when looking at each individual country.
 </p>
 
 <p align="justify">
-  In addition to the above, the table below shows the data types of each of the fields of the collection, as well as the percentage of null values. It is important to clarify that this analysis was done with a sample of <strong>70000</strong> records from the collection.
-</p>
-
-
-| Atribute Name | Type| % Null Values | Predominant Values |
-| :-------------: | :----------: | :-----------: | :-----------: |
-| _id | Object | 0% | N/A |
-| amount_more_from_developer_apps | Numeric | 35.5% | 0 (~30%), 16 (~24%)
-| amount_reviews | Numeric | 64.5% | 38 (~64%) |
-| amount_similar_apps | Numeric | 35.5% | 18 (~64%), 16 (~27%) |
-| android_version | String | 0.3% | "4.1 and up" (~21%), "4.0.3 and up" (~15%) |
-| category | String | 0% | N/A |
-| content_rating | String | 0% | "Everyone" (~46%), "USK: All ages" (~22%) |
-| country | String | 0% | "co" (~26%), "us" (~26%), "de" (~25%), "br" (~22%) |
-| currency | String | 0% | "COP" (~26%), "$" (~26%), "€" (~25%), "R\$" (~22%) |
-| current_version | String | 2.4% | "Varies with device" (~14%), "1.0" (~6%) |
-| description | String | 0% | N/A |
-| dev_address | String | 54% | N/A |
-| dev_mail | String | 0% | N/A |
-| dev_name | String | 0% | N/A |
-| genre | Array | 0% | N/A |
-| has_specific_version | Bool | 0% | false (~86%) |
-| has_whats_new | Bool | 0% | true (~64%) |
-| id | String | 0% | N/A |
-| last_update | Date | 0% | N/A |
-| name | String | 0% | N/A |
-| num_installs | String | 0% | "+1" (~35%) |
-| price | Numeric | 0% | N/A |
-| price_usd | Numeric | 0% | N/A |
-| rating | Numeric | 1.7% | 4.4 (~40%), 4 (~22%) |
-| rating_1 | Numeric | 23.8% | N/A |
-| rating_2 | Numeric | 23% | N/A |
-| rating_3 | Numeric | 22.4% | N/A |
-| rating_4 | Numeric | 21.9% | N/A |
-| rating_5 | Numeric | 21.5% | N/A |
-| required_version | String | 0% | "Ice CreamSandwich and up" (~30%), "Jelly Bean and up" (~25%) |
-| retrieved_date_end | Date | 0% | N/A |
-| retrieved_date_start | Date | 0% | N/A |
-| summary | String | 0% | N/A |
-| top | String | 0% | "topFree" (~57%), "topSelling" (~40%) |
-| url | String | 0% | N/A |
-| whats_new | Array | 0% | N/A |
-
-### Review Collection Discoveries
-
-Select Input <select id="chartTypesReviewxaxis"></select>
-<svg id="chartTypesReview" width="500" height="450"></svg>
-
-### Extra App Collection Discoveries
-<p align="justify">
-  This collection has <strong>YYY</strong> records and a total of <strong>14</strong> fields. The following figure depicts the fields data-type distribution.  
-</p>
-
-Select Input <select id="chartTypesExtraxaxis"></select>
-<svg id="chartTypesExtra" width="500" height="450"></svg>
-
-<p align="justify">
-  As the figure shows, the <i>String</i> data-type is predominant in this collection, folowed by <i>Date</i> fields. In the same way, it's possible to evidence the same proportions when lookin at each individual country, with the exception of <strong><i>de</i></strong> which has a higher amount of <i>null</i> values.
-</p>
-
-<p align="justify">
-  In addition to the above, the table below shows the data types of each of the fields of the collection, as well as the percentage of null values. It is important to clarify that this analysis was done with a sample of <strong>90000</strong> records from the collection.
+  In addition to the above, the table below shows the data types of each of the fields of the collection, as well as the percentage of null values.
 </p>
 
 
 | Atribute Name | Type| % Null Values |
-| :-------------: | :----------: | :-----------: | :-----------: |
+| :-------------: | :----------: | :-----------: |
 | _id | Object | 0% |
-| app_id | String | 0.2% |
+| amount_more_from_developer_apps | Numeric | 0% |
+| amount_reviews | Numeric | 0% |
+| amount_similar_apps | Numeric | 0% |
+| android_version | String | 0% |
+| category | String | 0% |
+| content_rating | String | 0% |
+| country | String | 0% |
+| currency | String | 0% |
+| current_version | String | 0% |
+| description | String | 0% | 
+| dev_address | String | 54% |
+| dev_mail | String | 0.00045% | 
+| dev_name | String | 0% | 
+| genre | Array | 0.005% |
+| id | String | 0% | 
+| last_update | Date | 0% | 
+| name | String | 0% | 
+| num_installs | String | 0% | 
+| price | Numeric | 0.02% |
+| rating | Numeric | 0% | 
+| rating_1 | Numeric | 0% | 
+| rating_2 | Numeric | 0% | 
+| rating_3 | Numeric | 0% | 
+| rating_4 | Numeric | 0% |
+| rating_5 | Numeric | 0% | 
+| retrieved_date_end | Date | 0% | 
+| retrieved_date_start | Date | 0% |
+| summary | String | 0% |
+| top | String | 0% |
+| url | String | 0% |
+| whats_new | Array | 0% |
+
+
+### Review Collection Discoveries
+<p align="justify">
+  This collection has <strong>19,095,412</strong> documents and a total of <strong>16</strong> fields. The following figure depicts the fields data-type distribution. 
+</p>
+
+Select Input <select id="chartTypesReviewxaxis"></select>
+<svg id="chartTypesReview" width="500" height="450"></svg>
+
+<p align="justify">
+  In addition to the above, the table below shows the data types of each of the fields of the collection, as well as the percentage of null values.
+</p>
+
+| Atribute Name | Type| % Null Values |
+| :-------------: | :----------: | :-----------: |
+| _id | Object | 0% |
+| app_id | String | 0% |
+| app_name | String | 0% |
+| app_retrieved_date_end | Date | 0% |
+| app_retrieved_date_start | Date | 0% |
+| author | String | 0% |
+| category | String | 0% | 
+| country | String | 0% | 
+| date | Date | 35.3% |
+| dev_name | String | 84.9% | 
+| dev_reply | String | 84.9% | 
+| dev_reply_date | Date | 84.9% | 
+| new_date | Numeric | 64.7%| 
+| rating | Numeric | 0% | 
+| text | String | 0% | 
+| title | String | 90.9% | 
+
+
+### Extra App Collection Discoveries
+<p align="justify">
+  This collection has <strong>11,415,027</strong> documents and a total of <strong>15</strong> fields. The following figure depicts the fields data-type distribution.  
+</p>
+
+Select Input <select id="chartTypesExtraxaxis"></select>
+
+<svg id="chartTypesExtra" width="500" height="450"></svg>
+
+<p align="justify">
+  As the figure shows, the <i>String</i> data-type is predominant in this collection, followed by <i>Date</i> fields. In the same way, it's possible to evidence the same proportions when looking at each individual country, with the exception of <strong><i>de</i></strong> which has a higher amount of <i>null</i> values.
+</p>
+
+<p align="justify">
+  In addition to the above, the table below shows the data types of each of the fields of the collection, as well as the percentage of null values.
+</p>
+
+
+| Atribute Name | Type| % Null Values |
+| :-------------: | :----------: | :-----------: |
+| _id | Object | 0% |
+| app_id | String | 0% |
 | app_name | String | 0% |
 | app_retrieved_date_end | Date | 0% |
 | app_retrieved_date_start | Date | 0% |
 | category | String | 0% | 
 | country | String | 0% | 
+| currency | String | 0.2% |
 | dev_name | String | 0% | 
 | id | String | 0% | 
 | name | String | 0% | 
-| price | String | 20.6% | 
-| rating | String | 1.7 | 
+| price | Numeric | 0% | 
+| rating | Numeric | 0% | 
 | state | String | 0% | 
 | summary | String | 0% | 
 
-<p align="justify">
-  From the above, it's worth noting that the majority of the collection fields are <i>unique</i> and, therefore, it wasn't possible to depict predominant values for those fields. Nevertheless, some fields did evidence predominant value such as:  
-</p>
 
-* The <strong>price</strong> field with a 90% predominance of the value "Free".
-* The <strong>rating</strong> field with a 50% predominance of the value "4.5", followed by the value "4.5" with 25%.
-* The <strong>state</strong> field with a 72% predominance of the value "similar", followed by the value "more_from_developer" with the remaining percentage.
+<p align="justify">
+  From the above, it's worth noting that the majority of the collection fields are <i>unique</i> and, therefore, it wasn't possible to depict predominant values for those fields. 
+</p>
