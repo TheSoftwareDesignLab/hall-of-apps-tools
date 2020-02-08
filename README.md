@@ -243,7 +243,11 @@ Select Input <select id="chartTypesReviewxaxis"></select>
 <svg id="chartTypesReview" width="500" height="450"></svg>
 
 <p align="justify">
-  The table below shows the data types of each of the fields of the collection, as well as the percentage of null values.
+  As the figure shows, the <i>String</i> data-type is predominant in this collection, followed by <i>Date</i> fields. In the same way, it's possible to evidence the same proportions when looking at each individual country.
+</p>
+
+<p align="justify">
+  In addition to the above, the table below shows the data types of each of the fields of the collection, as well as the percentage of null values.
 </p>
 
 | Atribute Name | Type| % Null Values |
