@@ -46,7 +46,7 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 </p>
 
 <p align="justify">
-  Instructions to restore the database can be found here: [Hall-of-apps](https://github.com/TheSoftwareDesignLab/hall-of-apps-tools)
+  Instructions to restore the database can be found here: <a href="https://github.com/TheSoftwareDesignLab/hall-of-apps-tools">Hall-of-apps</a>
 </p>
 
 ### Database Structure
