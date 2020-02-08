@@ -46,7 +46,7 @@ To generate the Hall-of-Apps, we used the process below to extract, parse, store
 </p>
 
 <p align="justify">
-  Instructions to restore the database can be found here: [Hall-of-apps](https://github.com/TheSoftwareDesignLab/hall-of-apps-tools) 
+  Instructions to restore the database can be found here: [Hall-of-apps](https://github.com/TheSoftwareDesignLab/hall-of-apps-tools)
 </p>
 
 ### Database Structure
@@ -238,11 +238,9 @@ Select Input <select id="chartTypesAppxaxis"></select>
   This collection has <strong>19,095,412</strong> documents and a total of <strong>16</strong> fields. The following figure depicts the fields data-type distribution. 
 </p>
 
-Select Input <select id="chartTypesReviewxaxis"></select>
-<svg id="chartTypesReview" width="500" height="450"></svg>
 
 <p align="justify">
-  In addition to the above, the table below shows the data types of each of the fields of the collection, as well as the percentage of null values.
+  The table below shows the data types of each of the fields of the collection, as well as the percentage of null values.
 </p>
 
 | Atribute Name | Type| % Null Values |
