@@ -180,7 +180,7 @@ Select Input <select id="chartCustomCatxaxis"></select>
 <input type="checkbox" id="chartTopEditorsort">	Toggle sort 
 <svg id="chartTopEditor" width="500" height="450"></svg>
 
-### App Collection Discoveries
+### App Collection Distribution
 <p align="justify">
   This collection has <strong>671,041</strong> documents and a total of <strong>32</strong> fields. The following figure depicts the fields data-type distribution.  
 </p>
@@ -233,7 +233,7 @@ Select Input <select id="chartTypesAppxaxis"></select>
 | whats_new | Array | 0% |
 
 
-### Review Collection Discoveries
+### Review Collection Distribution
 <p align="justify">
   This collection has <strong>19,095,412</strong> documents and a total of <strong>16</strong> fields. The following figure depicts the fields data-type distribution. 
 </p>
@@ -270,7 +270,7 @@ Select Input <select id="chartTypesReviewxaxis"></select>
 | title | String | 90.9% | 
 
 
-### Extra App Collection Discoveries
+### Extra App Collection Distribution
 <p align="justify">
   This collection has <strong>11,415,027</strong> documents and a total of <strong>15</strong> fields. The following figure depicts the fields data-type distribution.  
 </p>
