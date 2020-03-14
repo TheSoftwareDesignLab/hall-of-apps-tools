@@ -1,7 +1,7 @@
 var request = require('request');
 var fs = require('fs');
 var CronJob = require('cron').CronJob;
-var weekName =  "20180826-20180901"//getWeekName();//
+var weekName =  getWeekName();//
 var interval = 2;
 
 function getWeekName() {
