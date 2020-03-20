@@ -1,7 +1,7 @@
 # Hall of Apps: The Top Android Apps Metadata Archive
 | Resource | DOI |
 |:---:|:---:|
-|Dataset| [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3653367.svg)](https://doi.org/10.5281/zenodo.3653367)|
+|Dataset|[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3716367.svg)](https://doi.org/10.5281/zenodo.3716367) |
 
 Hall-of-Apps is a dataset containing top charts’ apps metadata extracted (weekly) from GP, for 4 different countries, during 30 weeks.
 
@@ -34,13 +34,13 @@ Hall-of-Apps has two storage mechanisms:
 
 When uncompressed, Hall-of-Apps raw HTML files weights 231GB, thus, it was stored in a .tar.bz2 file with a smaller size of 38GB. 
 
-Moreover, the MongoDB database was exported using *mongodump*, an utility for creating binaries of the contents, and compressed into a .zip file of size 3.2GB. Both formats were uploaded to Zenodo to enable further studies and analyzes and can be downloaded here: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3653367.svg)](https://doi.org/10.5281/zenodo.3653367)
+Moreover, the MongoDB database was exported using *mongodump*, an utility for creating binaries of the contents, and compressed into a .zip file of size 3.2GB. Both formats were uploaded to Zenodo to enable further studies and analyzes and can be downloaded here: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3716367.svg)](https://doi.org/10.5281/zenodo.3716367)
 
 To restore the DB:
 
 1. Install [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
 2. Start MongoDB
-3. Download the dataset from Zenodo - [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3653367.svg)](https://doi.org/10.5281/zenodo.3653367)
+3. Download the dataset from Zenodo - [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3716367.svg)](https://doi.org/10.5281/zenodo.3716367)
 4. Unzip the mining file (mining.zip)
 5. Execute command and wait until it finishes: 
 > mongorestore -d mining \<path-mining-folder>
